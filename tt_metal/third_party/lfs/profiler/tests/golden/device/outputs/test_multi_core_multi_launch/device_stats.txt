@@ -1,0 +1,54 @@
+
+=================== device_fw_duration ===================
+       Count          =          4
+     Average [cycles] =          0
+         Max [cycles] =          0
+      Median [cycles] =          0
+         Min [cycles] =          0
+         Sum [cycles] =          0
+       Range [cycles] =          0
+
+
+=================== device_kernel_duration ===================
+       Count          =          4
+     Average [cycles] =          0
+         Max [cycles] =          0
+      Median [cycles] =          0
+         Min [cycles] =          0
+         Sum [cycles] =          0
+       Range [cycles] =          0
+
+
+=================== device_brisc_kernel_duration ===================
+       Count          =          4
+     Average [cycles] =          0
+         Max [cycles] =          0
+      Median [cycles] =          0
+         Min [cycles] =          0
+         Sum [cycles] =          0
+       Range [cycles] =          0
+
+
+=================== device_ncrisc_kernel_duration ===================
+    Duration [cycles] =          0
+
+
+=================== device_compute_cb_wait_front ===================
+       Count          =          4
+     Average [cycles] =          0
+         Max [cycles] =          0
+      Median [cycles] =          0
+         Min [cycles] =          0
+         Sum [cycles] =          0
+       Range [cycles] =          0
+
+
+=================== device_compute_cb_reserve_back ===================
+       Count          =          4
+     Average [cycles] =          0
+         Max [cycles] =          0
+      Median [cycles] =          0
+         Min [cycles] =          0
+         Sum [cycles] =          0
+       Range [cycles] =          0
+

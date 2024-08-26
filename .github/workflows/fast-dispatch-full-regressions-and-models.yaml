@@ -1,0 +1,61 @@
+name: Nightly fast dispatch tests
+
+on:
+  workflow_dispatch:
+  workflow_call:
+  schedule:
+    - cron: "0 */2 * * *"
+
+jobs:
+  build-artifact:
+    uses: ./.github/workflows/build-artifact.yaml
+    secrets: inherit
+  fd-nightly:
+    needs: build-artifact
+    strategy:
+      # Do not fail-fast because we need to ensure all tests go to completion
+      # so we try not to get hanging machines
+      fail-fast: false
+      matrix:
+        test-group:
+          [
+            { name: "Common models GS", arch: grayskull, cmd: tests/scripts/single_card/nightly/run_common_models.sh, timeout: 40 },
+            { name: "Common models N300 WH B0", arch: wormhole_b0, cmd: tests/scripts/single_card/nightly/run_common_models.sh, timeout: 40 },
+            { name: "GS-only ttnn nightly", arch: grayskull, cmd: tests/scripts/single_card/nightly/run_ttnn.sh, timeout: 40 },
+            { name: "GS-only models", arch: grayskull, cmd: tests/scripts/single_card/nightly/run_gs_only.sh, timeout: 40 },
+            { name: "N300 WH-only models", arch: wormhole_b0, cmd: tests/scripts/single_card/nightly/run_wh_b0_only.sh, timeout: 50 },
+            { name: "API tests GS", arch: grayskull, cmd: ./tests/scripts/run_tests.sh --tt-arch grayskull --pipeline-type frequent_api --dispatch-mode fast, timeout: 40 },
+            { name: "API tests N300 WH B0", arch: wormhole_b0, cmd: ./tests/scripts/run_tests.sh --tt-arch wormhole_b0 --pipeline-type frequent_api --dispatch-mode fast, timeout: 40 },
+            { name: "[Unstable] N300 models", arch: wormhole_b0, cmd: tests/scripts/single_card/nightly/run_wh_b0_unstable.sh, timeout: 45 },
+          ]
+    name: FD ${{ matrix.test-group.name }} ${{ matrix.test-group.arch }}
+    env:
+      TT_METAL_ENV: ${{ vars.TT_METAL_ENV }}
+      ARCH_NAME: ${{ matrix.test-group.arch }}
+      LOGURU_LEVEL: INFO
+      LD_LIBRARY_PATH: ${{ github.workspace }}/build/lib
+    runs-on: model-runner-${{ matrix.test-group.arch }}
+    steps:
+      - uses: tenstorrent-metal/metal-workflows/.github/actions/checkout-with-submodule-lfs@v2.0.0
+      - name: Ensure weka mount is active
+        timeout-minutes: 3
+        run: |
+          sudo systemctl restart mnt-MLPerf.mount
+          sudo /etc/rc.local
+          ls -al /mnt/MLPerf/bit_error_tests
+      - name: Set up dyanmic env vars for build
+        run: |
+          echo "TT_METAL_HOME=$(pwd)" >> $GITHUB_ENV
+      - uses: actions/download-artifact@v4
+        with:
+          name: TTMetal_build_${{ matrix.test-group.arch }}
+      - name: Extract files
+        run: tar -xvf ttm_${{ matrix.test-group.arch }}.tar
+      - uses: ./.github/actions/install-python-deps
+      - name: Run frequent reg tests scripts
+        timeout-minutes: ${{ matrix.test-group.timeout }}
+        run: |
+          source ${{ github.workspace }}/python_env/bin/activate
+          cd $TT_METAL_HOME
+          export PYTHONPATH=$TT_METAL_HOME
+          ${{ matrix.test-group.cmd }}

@@ -1,0 +1,12 @@
+
+=================== device_fw_duration ===================
+    Duration [cycles] =          0
+
+
+=================== device_compute_cb_wait_front ===================
+    Duration [cycles] =          0
+
+
+=================== device_compute_cb_reserve_back ===================
+    Duration [cycles] =          0
+

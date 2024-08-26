@@ -1,0 +1,9 @@
+build*
+*.o
+*.d/
+.umd/
+compile_commands.json
+.cache/**
+.cpmcache/
+.vscode/
+*.log

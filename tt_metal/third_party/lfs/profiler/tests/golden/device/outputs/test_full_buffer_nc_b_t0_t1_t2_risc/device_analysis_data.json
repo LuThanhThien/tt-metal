@@ -1,0 +1,919 @@
+{
+  "data": {
+    "deviceInfo": {
+      "arch": "grayskull",
+      "freq": 1200
+    },
+    "devices": {
+      "0": {
+        "cores": {
+          "(0, 0)": {
+            "riscs": {
+              "BRISC": {
+                "timeseries": [
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0)",
+                  "({'id': 1, 'zone_name': 'BRISC-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178244005)",
+                  "({'id': 2, 'zone_name': 'BRISC-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247355)",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200509)",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200591)",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200690)",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200761)",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200851)",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200922)",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186201012)",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186201083)",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203125)",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203196)",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203288)",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203359)",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203449)",
+                  "({'id': 4, 'zone_name': 'BRISC-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186284016)"
+                ]
+              },
+              "NCRISC": {
+                "timeseries": [
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0)",
+                  "({'id': 1, 'zone_name': 'NCRISC-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247411)",
+                  "({'id': 2, 'zone_name': 'NCRISC-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248751)",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248970)",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249112)",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249279)",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249418)",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249576)",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249714)",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249874)",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250011)",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250169)",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250305)",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250464)",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250601)",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250759)",
+                  "({'id': 4, 'zone_name': 'NCRISC-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186122486)"
+                ]
+              },
+              "TENSIX": {
+                "ops": [
+                  {
+                    "timeseries": [
+                      "({'id': 1, 'zone_name': 'BRISC-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178244005, 'BRISC')",
+                      "({'id': 2, 'zone_name': 'BRISC-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247355, 'BRISC')",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200509, 'BRISC')",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200591, 'BRISC')",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200690, 'BRISC')",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200761, 'BRISC')",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200851, 'BRISC')",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200922, 'BRISC')",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186201012, 'BRISC')",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186201083, 'BRISC')",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203125, 'BRISC')",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203196, 'BRISC')",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203288, 'BRISC')",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203359, 'BRISC')",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203449, 'BRISC')",
+                      "({'id': 4, 'zone_name': 'BRISC-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186284016, 'BRISC')",
+                      "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, 'TRISC_0')",
+                      "({'id': 1, 'zone_name': 'TRISC_0-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247759, 'TRISC_0')",
+                      "({'id': 2, 'zone_name': 'TRISC_0-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248287, 'TRISC_0')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178257796, 'TRISC_0')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178275220, 'TRISC_0')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178293041, 'TRISC_0')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178310866, 'TRISC_0')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178328792, 'TRISC_0')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178349670, 'TRISC_0')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178370574, 'TRISC_0')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178391474, 'TRISC_0')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178412458, 'TRISC_0')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178433322, 'TRISC_0')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178454262, 'TRISC_0')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178475156, 'TRISC_0')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178496173, 'TRISC_0')",
+                      "({'id': 4, 'zone_name': 'TRISC_0-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186280839, 'TRISC_0')",
+                      "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, 'TRISC_1')",
+                      "({'id': 1, 'zone_name': 'TRISC_1-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247587, 'TRISC_1')",
+                      "({'id': 2, 'zone_name': 'TRISC_1-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248122, 'TRISC_1')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248349, 'TRISC_1')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178275650, 'TRISC_1')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178293474, 'TRISC_1')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178311298, 'TRISC_1')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178329135, 'TRISC_1')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178350100, 'TRISC_1')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178371014, 'TRISC_1')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178391911, 'TRISC_1')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178412810, 'TRISC_1')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178433760, 'TRISC_1')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178454699, 'TRISC_1')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178475595, 'TRISC_1')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178496532, 'TRISC_1')",
+                      "({'id': 4, 'zone_name': 'TRISC_1-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186280895, 'TRISC_1')",
+                      "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, 'TRISC_2')",
+                      "({'id': 1, 'zone_name': 'TRISC_2-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247913, 'TRISC_2')",
+                      "({'id': 2, 'zone_name': 'TRISC_2-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248519, 'TRISC_2')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249955, 'TRISC_2')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178276206, 'TRISC_2')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178294024, 'TRISC_2')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178311841, 'TRISC_2')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178329714, 'TRISC_2')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178350656, 'TRISC_2')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178371575, 'TRISC_2')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178392469, 'TRISC_2')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178413385, 'TRISC_2')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178434317, 'TRISC_2')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178455247, 'TRISC_2')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178476161, 'TRISC_2')",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178497100, 'TRISC_2')",
+                      "({'id': 4, 'zone_name': 'TRISC_2-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186281445, 'TRISC_2')"
+                    ]
+                  }
+                ],
+                "timeseries": [
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, 'NCRISC')",
+                  "({'id': 1, 'zone_name': 'NCRISC-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247411, 'NCRISC')",
+                  "({'id': 2, 'zone_name': 'NCRISC-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248751, 'NCRISC')",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248970, 'NCRISC')",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249112, 'NCRISC')",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249279, 'NCRISC')",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249418, 'NCRISC')",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249576, 'NCRISC')",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249714, 'NCRISC')",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249874, 'NCRISC')",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250011, 'NCRISC')",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250169, 'NCRISC')",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250305, 'NCRISC')",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250464, 'NCRISC')",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250601, 'NCRISC')",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250759, 'NCRISC')",
+                  "({'id': 4, 'zone_name': 'NCRISC-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186122486, 'NCRISC')",
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, 'BRISC')",
+                  "({'id': 1, 'zone_name': 'BRISC-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178244005, 'BRISC')",
+                  "({'id': 2, 'zone_name': 'BRISC-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247355, 'BRISC')",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200509, 'BRISC')",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200591, 'BRISC')",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200690, 'BRISC')",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200761, 'BRISC')",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200851, 'BRISC')",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200922, 'BRISC')",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186201012, 'BRISC')",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186201083, 'BRISC')",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203125, 'BRISC')",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203196, 'BRISC')",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203288, 'BRISC')",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203359, 'BRISC')",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203449, 'BRISC')",
+                  "({'id': 4, 'zone_name': 'BRISC-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186284016, 'BRISC')",
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, 'TRISC_0')",
+                  "({'id': 1, 'zone_name': 'TRISC_0-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247759, 'TRISC_0')",
+                  "({'id': 2, 'zone_name': 'TRISC_0-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248287, 'TRISC_0')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178257796, 'TRISC_0')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178275220, 'TRISC_0')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178293041, 'TRISC_0')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178310866, 'TRISC_0')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178328792, 'TRISC_0')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178349670, 'TRISC_0')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178370574, 'TRISC_0')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178391474, 'TRISC_0')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178412458, 'TRISC_0')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178433322, 'TRISC_0')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178454262, 'TRISC_0')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178475156, 'TRISC_0')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178496173, 'TRISC_0')",
+                  "({'id': 4, 'zone_name': 'TRISC_0-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186280839, 'TRISC_0')",
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, 'TRISC_1')",
+                  "({'id': 1, 'zone_name': 'TRISC_1-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247587, 'TRISC_1')",
+                  "({'id': 2, 'zone_name': 'TRISC_1-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248122, 'TRISC_1')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248349, 'TRISC_1')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178275650, 'TRISC_1')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178293474, 'TRISC_1')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178311298, 'TRISC_1')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178329135, 'TRISC_1')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178350100, 'TRISC_1')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178371014, 'TRISC_1')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178391911, 'TRISC_1')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178412810, 'TRISC_1')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178433760, 'TRISC_1')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178454699, 'TRISC_1')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178475595, 'TRISC_1')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178496532, 'TRISC_1')",
+                  "({'id': 4, 'zone_name': 'TRISC_1-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186280895, 'TRISC_1')",
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, 'TRISC_2')",
+                  "({'id': 1, 'zone_name': 'TRISC_2-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247913, 'TRISC_2')",
+                  "({'id': 2, 'zone_name': 'TRISC_2-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248519, 'TRISC_2')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249955, 'TRISC_2')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178276206, 'TRISC_2')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178294024, 'TRISC_2')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178311841, 'TRISC_2')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178329714, 'TRISC_2')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178350656, 'TRISC_2')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178371575, 'TRISC_2')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178392469, 'TRISC_2')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178413385, 'TRISC_2')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178434317, 'TRISC_2')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178455247, 'TRISC_2')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178476161, 'TRISC_2')",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178497100, 'TRISC_2')",
+                  "({'id': 4, 'zone_name': 'TRISC_2-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186281445, 'TRISC_2')"
+                ]
+              },
+              "TRISC_0": {
+                "timeseries": [
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0)",
+                  "({'id': 1, 'zone_name': 'TRISC_0-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247759)",
+                  "({'id': 2, 'zone_name': 'TRISC_0-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248287)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178257796)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178275220)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178293041)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178310866)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178328792)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178349670)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178370574)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178391474)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178412458)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178433322)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178454262)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178475156)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178496173)",
+                  "({'id': 4, 'zone_name': 'TRISC_0-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186280839)"
+                ]
+              },
+              "TRISC_1": {
+                "timeseries": [
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0)",
+                  "({'id': 1, 'zone_name': 'TRISC_1-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247587)",
+                  "({'id': 2, 'zone_name': 'TRISC_1-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248122)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248349)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178275650)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178293474)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178311298)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178329135)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178350100)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178371014)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178391911)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178412810)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178433760)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178454699)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178475595)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178496532)",
+                  "({'id': 4, 'zone_name': 'TRISC_1-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186280895)"
+                ]
+              },
+              "TRISC_2": {
+                "timeseries": [
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0)",
+                  "({'id': 1, 'zone_name': 'TRISC_2-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247913)",
+                  "({'id': 2, 'zone_name': 'TRISC_2-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248519)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249955)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178276206)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178294024)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178311841)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178329714)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178350656)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178371575)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178392469)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178413385)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178434317)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178455247)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178476161)",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178497100)",
+                  "({'id': 4, 'zone_name': 'TRISC_2-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186281445)"
+                ]
+              }
+            }
+          },
+          "DEVICE": {
+            "analysis": {
+              "device_compute_cb_reserve_back": {
+                "analysis": {
+                  "across": "ops",
+                  "marker": {
+                    "risc": "TRISC_2",
+                    "zone_name": "CB-COMPUTE-RESERVE-BACK"
+                  },
+                  "type": "sum"
+                },
+                "stats": {
+                  "Average": 0.0,
+                  "Count": 1,
+                  "Max": 0,
+                  "Median": 0.0,
+                  "Min": 0,
+                  "Range": 0,
+                  "Sum": 0
+                }
+              },
+              "device_compute_cb_wait_front": {
+                "analysis": {
+                  "across": "ops",
+                  "marker": {
+                    "risc": "TRISC_0",
+                    "zone_name": "CB-COMPUTE-WAIT-FRONT"
+                  },
+                  "type": "sum"
+                },
+                "stats": {
+                  "Average": 0.0,
+                  "Count": 1,
+                  "Max": 0,
+                  "Median": 0.0,
+                  "Min": 0,
+                  "Range": 0,
+                  "Sum": 0
+                }
+              },
+              "device_fw_duration": {
+                "analysis": {
+                  "across": "ops",
+                  "end": {
+                    "core": "ANY",
+                    "risc": "ANY",
+                    "zone_name": [
+                      "BRISC-FW",
+                      "NCRISC-FW",
+                      "TRISC-FW",
+                      "ERISC-FW"
+                    ]
+                  },
+                  "start": {
+                    "core": "ANY",
+                    "risc": "ANY",
+                    "zone_name": [
+                      "BRISC-FW",
+                      "NCRISC-FW",
+                      "TRISC-FW",
+                      "ERISC-FW"
+                    ]
+                  },
+                  "type": "op_first_last"
+                },
+                "stats": {
+                  "Average": 0.0,
+                  "Count": 1,
+                  "Max": 0,
+                  "Median": 0.0,
+                  "Min": 0,
+                  "Range": 0,
+                  "Sum": 0
+                }
+              }
+            },
+            "riscs": {
+              "BRISC": {
+                "timeseries": [
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, (0, 0))",
+                  "({'id': 1, 'zone_name': 'BRISC-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178244005, (0, 0))",
+                  "({'id': 2, 'zone_name': 'BRISC-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247355, (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200509, (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200591, (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200690, (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200761, (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200851, (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200922, (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186201012, (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186201083, (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203125, (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203196, (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203288, (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203359, (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203449, (0, 0))",
+                  "({'id': 4, 'zone_name': 'BRISC-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186284016, (0, 0))"
+                ]
+              },
+              "NCRISC": {
+                "timeseries": [
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, (0, 0))",
+                  "({'id': 1, 'zone_name': 'NCRISC-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247411, (0, 0))",
+                  "({'id': 2, 'zone_name': 'NCRISC-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248751, (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248970, (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249112, (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249279, (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249418, (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249576, (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249714, (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249874, (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250011, (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250169, (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250305, (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250464, (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250601, (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250759, (0, 0))",
+                  "({'id': 4, 'zone_name': 'NCRISC-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186122486, (0, 0))"
+                ]
+              },
+              "TENSIX": {
+                "ops": [
+                  {
+                    "analysis": {
+                      "device_compute_cb_reserve_back": {
+                        "analysis": {
+                          "across": "ops",
+                          "marker": {
+                            "risc": "TRISC_2",
+                            "zone_name": "CB-COMPUTE-RESERVE-BACK"
+                          },
+                          "type": "sum"
+                        },
+                        "series": [
+                          {
+                            "duration_cycles": 0,
+                            "duration_type": {
+                              "risc": "TRISC_2",
+                              "zone_name": "CB-COMPUTE-RESERVE-BACK"
+                            }
+                          }
+                        ],
+                        "stats": {
+                          "Average": 0.0,
+                          "Count": 1,
+                          "First": 0,
+                          "Max": 0,
+                          "Median": 0.0,
+                          "Min": 0,
+                          "Range": 0,
+                          "Sum": 0
+                        }
+                      },
+                      "device_compute_cb_wait_front": {
+                        "analysis": {
+                          "across": "ops",
+                          "marker": {
+                            "risc": "TRISC_0",
+                            "zone_name": "CB-COMPUTE-WAIT-FRONT"
+                          },
+                          "type": "sum"
+                        },
+                        "series": [
+                          {
+                            "duration_cycles": 0,
+                            "duration_type": {
+                              "risc": "TRISC_0",
+                              "zone_name": "CB-COMPUTE-WAIT-FRONT"
+                            }
+                          }
+                        ],
+                        "stats": {
+                          "Average": 0.0,
+                          "Count": 1,
+                          "First": 0,
+                          "Max": 0,
+                          "Median": 0.0,
+                          "Min": 0,
+                          "Range": 0,
+                          "Sum": 0
+                        }
+                      },
+                      "device_fw_duration": {
+                        "analysis": {
+                          "across": "ops",
+                          "end": {
+                            "core": "ANY",
+                            "risc": "ANY",
+                            "zone_name": [
+                              "BRISC-FW",
+                              "NCRISC-FW",
+                              "TRISC-FW",
+                              "ERISC-FW"
+                            ]
+                          },
+                          "start": {
+                            "core": "ANY",
+                            "risc": "ANY",
+                            "zone_name": [
+                              "BRISC-FW",
+                              "NCRISC-FW",
+                              "TRISC-FW",
+                              "ERISC-FW"
+                            ]
+                          },
+                          "type": "op_first_last"
+                        },
+                        "series": [
+                          {
+                            "duration_cycles": 0,
+                            "duration_type": "({'id': 1, 'zone_name': 'BRISC-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, {'id': 4, 'zone_name': 'BRISC-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0})",
+                            "end_cycle": 0,
+                            "start_cycle": 0
+                          }
+                        ],
+                        "stats": {
+                          "Average": 0.0,
+                          "Count": 1,
+                          "First": 0,
+                          "Max": 0,
+                          "Median": 0.0,
+                          "Min": 0,
+                          "Range": 0,
+                          "Sum": 0
+                        }
+                      }
+                    },
+                    "timeseries": [
+                      "({'id': 1, 'zone_name': 'BRISC-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178244005, 'BRISC', (0, 0))",
+                      "({'id': 2, 'zone_name': 'BRISC-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247355, 'BRISC', (0, 0))",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200509, 'BRISC', (0, 0))",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200591, 'BRISC', (0, 0))",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200690, 'BRISC', (0, 0))",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200761, 'BRISC', (0, 0))",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200851, 'BRISC', (0, 0))",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200922, 'BRISC', (0, 0))",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186201012, 'BRISC', (0, 0))",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186201083, 'BRISC', (0, 0))",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203125, 'BRISC', (0, 0))",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203196, 'BRISC', (0, 0))",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203288, 'BRISC', (0, 0))",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203359, 'BRISC', (0, 0))",
+                      "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203449, 'BRISC', (0, 0))",
+                      "({'id': 4, 'zone_name': 'BRISC-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186284016, 'BRISC', (0, 0))",
+                      "({'id': 1, 'zone_name': 'TRISC_0-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247759, 'TRISC_0', (0, 0))",
+                      "({'id': 2, 'zone_name': 'TRISC_0-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248287, 'TRISC_0', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178257796, 'TRISC_0', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178275220, 'TRISC_0', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178293041, 'TRISC_0', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178310866, 'TRISC_0', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178328792, 'TRISC_0', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178349670, 'TRISC_0', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178370574, 'TRISC_0', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178391474, 'TRISC_0', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178412458, 'TRISC_0', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178433322, 'TRISC_0', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178454262, 'TRISC_0', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178475156, 'TRISC_0', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178496173, 'TRISC_0', (0, 0))",
+                      "({'id': 4, 'zone_name': 'TRISC_0-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186280839, 'TRISC_0', (0, 0))",
+                      "({'id': 1, 'zone_name': 'TRISC_1-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247587, 'TRISC_1', (0, 0))",
+                      "({'id': 2, 'zone_name': 'TRISC_1-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248122, 'TRISC_1', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248349, 'TRISC_1', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178275650, 'TRISC_1', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178293474, 'TRISC_1', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178311298, 'TRISC_1', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178329135, 'TRISC_1', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178350100, 'TRISC_1', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178371014, 'TRISC_1', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178391911, 'TRISC_1', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178412810, 'TRISC_1', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178433760, 'TRISC_1', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178454699, 'TRISC_1', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178475595, 'TRISC_1', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178496532, 'TRISC_1', (0, 0))",
+                      "({'id': 4, 'zone_name': 'TRISC_1-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186280895, 'TRISC_1', (0, 0))",
+                      "({'id': 1, 'zone_name': 'TRISC_2-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247913, 'TRISC_2', (0, 0))",
+                      "({'id': 2, 'zone_name': 'TRISC_2-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248519, 'TRISC_2', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249955, 'TRISC_2', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178276206, 'TRISC_2', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178294024, 'TRISC_2', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178311841, 'TRISC_2', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178329714, 'TRISC_2', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178350656, 'TRISC_2', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178371575, 'TRISC_2', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178392469, 'TRISC_2', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178413385, 'TRISC_2', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178434317, 'TRISC_2', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178455247, 'TRISC_2', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178476161, 'TRISC_2', (0, 0))",
+                      "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178497100, 'TRISC_2', (0, 0))",
+                      "({'id': 4, 'zone_name': 'TRISC_2-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186281445, 'TRISC_2', (0, 0))"
+                    ]
+                  }
+                ],
+                "timeseries": [
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, 'NCRISC', (0, 0))",
+                  "({'id': 1, 'zone_name': 'NCRISC-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247411, 'NCRISC', (0, 0))",
+                  "({'id': 2, 'zone_name': 'NCRISC-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248751, 'NCRISC', (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248970, 'NCRISC', (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249112, 'NCRISC', (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249279, 'NCRISC', (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249418, 'NCRISC', (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249576, 'NCRISC', (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249714, 'NCRISC', (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249874, 'NCRISC', (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250011, 'NCRISC', (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250169, 'NCRISC', (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250305, 'NCRISC', (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250464, 'NCRISC', (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250601, 'NCRISC', (0, 0))",
+                  "({'id': 5, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178250759, 'NCRISC', (0, 0))",
+                  "({'id': 4, 'zone_name': 'NCRISC-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186122486, 'NCRISC', (0, 0))",
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, 'BRISC', (0, 0))",
+                  "({'id': 1, 'zone_name': 'BRISC-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178244005, 'BRISC', (0, 0))",
+                  "({'id': 2, 'zone_name': 'BRISC-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247355, 'BRISC', (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200509, 'BRISC', (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200591, 'BRISC', (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200690, 'BRISC', (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200761, 'BRISC', (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200851, 'BRISC', (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186200922, 'BRISC', (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186201012, 'BRISC', (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186201083, 'BRISC', (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203125, 'BRISC', (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203196, 'BRISC', (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203288, 'BRISC', (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203359, 'BRISC', (0, 0))",
+                  "({'id': 7, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186203449, 'BRISC', (0, 0))",
+                  "({'id': 4, 'zone_name': 'BRISC-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186284016, 'BRISC', (0, 0))",
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, 'TRISC_0', (0, 0))",
+                  "({'id': 1, 'zone_name': 'TRISC_0-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247759, 'TRISC_0', (0, 0))",
+                  "({'id': 2, 'zone_name': 'TRISC_0-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248287, 'TRISC_0', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178257796, 'TRISC_0', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178275220, 'TRISC_0', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178293041, 'TRISC_0', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178310866, 'TRISC_0', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178328792, 'TRISC_0', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178349670, 'TRISC_0', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178370574, 'TRISC_0', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178391474, 'TRISC_0', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178412458, 'TRISC_0', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178433322, 'TRISC_0', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178454262, 'TRISC_0', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178475156, 'TRISC_0', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178496173, 'TRISC_0', (0, 0))",
+                  "({'id': 4, 'zone_name': 'TRISC_0-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186280839, 'TRISC_0', (0, 0))",
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, 'TRISC_1', (0, 0))",
+                  "({'id': 1, 'zone_name': 'TRISC_1-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247587, 'TRISC_1', (0, 0))",
+                  "({'id': 2, 'zone_name': 'TRISC_1-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248122, 'TRISC_1', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248349, 'TRISC_1', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178275650, 'TRISC_1', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178293474, 'TRISC_1', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178311298, 'TRISC_1', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178329135, 'TRISC_1', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178350100, 'TRISC_1', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178371014, 'TRISC_1', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178391911, 'TRISC_1', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178412810, 'TRISC_1', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178433760, 'TRISC_1', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178454699, 'TRISC_1', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178475595, 'TRISC_1', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178496532, 'TRISC_1', (0, 0))",
+                  "({'id': 4, 'zone_name': 'TRISC_1-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186280895, 'TRISC_1', (0, 0))",
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, 'TRISC_2', (0, 0))",
+                  "({'id': 1, 'zone_name': 'TRISC_2-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247913, 'TRISC_2', (0, 0))",
+                  "({'id': 2, 'zone_name': 'TRISC_2-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248519, 'TRISC_2', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249955, 'TRISC_2', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178276206, 'TRISC_2', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178294024, 'TRISC_2', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178311841, 'TRISC_2', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178329714, 'TRISC_2', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178350656, 'TRISC_2', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178371575, 'TRISC_2', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178392469, 'TRISC_2', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178413385, 'TRISC_2', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178434317, 'TRISC_2', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178455247, 'TRISC_2', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178476161, 'TRISC_2', (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178497100, 'TRISC_2', (0, 0))",
+                  "({'id': 4, 'zone_name': 'TRISC_2-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186281445, 'TRISC_2', (0, 0))"
+                ]
+              },
+              "TRISC_0": {
+                "timeseries": [
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, (0, 0))",
+                  "({'id': 1, 'zone_name': 'TRISC_0-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247759, (0, 0))",
+                  "({'id': 2, 'zone_name': 'TRISC_0-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248287, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178257796, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178275220, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178293041, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178310866, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178328792, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178349670, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178370574, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178391474, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178412458, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178433322, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178454262, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178475156, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178496173, (0, 0))",
+                  "({'id': 4, 'zone_name': 'TRISC_0-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186280839, (0, 0))"
+                ]
+              },
+              "TRISC_1": {
+                "timeseries": [
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, (0, 0))",
+                  "({'id': 1, 'zone_name': 'TRISC_1-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247587, (0, 0))",
+                  "({'id': 2, 'zone_name': 'TRISC_1-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248122, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248349, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178275650, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178293474, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178311298, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178329135, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178350100, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178371014, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178391911, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178412810, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178433760, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178454699, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178475595, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178496532, (0, 0))",
+                  "({'id': 4, 'zone_name': 'TRISC_1-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186280895, (0, 0))"
+                ]
+              },
+              "TRISC_2": {
+                "timeseries": [
+                  "({'id': 0, 'zone_name': '', 'zone_phase': '', 'src_line': '', 'src_file': ''}, 0, 0, (0, 0))",
+                  "({'id': 1, 'zone_name': 'TRISC_2-FW', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178247913, (0, 0))",
+                  "({'id': 2, 'zone_name': 'TRISC_2-KERNEL', 'zone_phase': 'begin', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178248519, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178249955, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178276206, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178294024, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178311841, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178329714, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178350656, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178371575, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178392469, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178413385, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178434317, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178455247, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178476161, (0, 0))",
+                  "({'id': 6, 'zone_name': '', 'zone_phase': '', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219178497100, (0, 0))",
+                  "({'id': 4, 'zone_name': 'TRISC_2-FW', 'zone_phase': 'end', 'src_line': 0, 'src_file': '', 'run_id': 0}, 0, 320219186281445, (0, 0))"
+                ]
+              }
+            }
+          }
+        },
+        "metadata": {
+          "global_min": {
+            "core": "(0, 0)",
+            "risc": "NCRISC",
+            "ts": 0
+          }
+        }
+      }
+    }
+  },
+  "setup": {
+    "detectOps": true,
+    "deviceAnalysisData": "device_analysis_data.json",
+    "deviceStatsTXT": "device_stats.txt",
+    "deviceTarball": "device_perf_results.tgz",
+    "displayStats": [
+      "Count",
+      "Average",
+      "Max",
+      "Median",
+      "Min",
+      "Sum",
+      "Range"
+    ],
+    "outputFolder": "output/device",
+    "riscTypes": [
+      "BRISC",
+      "NCRISC",
+      "TRISC",
+      "ERISC"
+    ],
+    "riscs": [
+      "BRISC",
+      "NCRISC",
+      "TRISC_0",
+      "TRISC_1",
+      "TRISC_2",
+      "ERISC"
+    ],
+    "timerAnalysis": {
+      "device_brisc_kernel_duration": {
+        "across": "ops",
+        "end": {
+          "core": "ANY",
+          "risc": "BRISC",
+          "zone_name": "BRISC-KERNEL"
+        },
+        "start": {
+          "core": "ANY",
+          "risc": "BRISC",
+          "zone_name": "BRISC-KERNEL"
+        },
+        "type": "op_first_last"
+      },
+      "device_compute_cb_reserve_back": {
+        "across": "ops",
+        "marker": {
+          "risc": "TRISC_2",
+          "zone_name": "CB-COMPUTE-RESERVE-BACK"
+        },
+        "type": "sum"
+      },
+      "device_compute_cb_wait_front": {
+        "across": "ops",
+        "marker": {
+          "risc": "TRISC_0",
+          "zone_name": "CB-COMPUTE-WAIT-FRONT"
+        },
+        "type": "sum"
+      },
+      "device_erisc_kernel_duration": {
+        "across": "ops",
+        "end": {
+          "core": "ANY",
+          "risc": "ERISC",
+          "zone_name": "ERISC-KERNEL"
+        },
+        "start": {
+          "core": "ANY",
+          "risc": "ERISC",
+          "zone_name": "ERISC-KERNEL"
+        },
+        "type": "op_first_last"
+      },
+      "device_fw_duration": {
+        "across": "ops",
+        "end": {
+          "core": "ANY",
+          "risc": "ANY",
+          "zone_name": [
+            "BRISC-FW",
+            "NCRISC-FW",
+            "TRISC-FW",
+            "ERISC-FW"
+          ]
+        },
+        "start": {
+          "core": "ANY",
+          "risc": "ANY",
+          "zone_name": [
+            "BRISC-FW",
+            "NCRISC-FW",
+            "TRISC-FW",
+            "ERISC-FW"
+          ]
+        },
+        "type": "op_first_last"
+      },
+      "device_kernel_duration": {
+        "across": "ops",
+        "end": {
+          "core": "ANY",
+          "risc": "ANY",
+          "zone_name": [
+            "BRISC-KERNEL",
+            "NCRISC-KERNEL",
+            "TRISC-KERNEL",
+            "ERISC-KERNEL"
+          ]
+        },
+        "start": {
+          "core": "ANY",
+          "risc": "ANY",
+          "zone_name": [
+            "BRISC-KERNEL",
+            "NCRISC-KERNEL",
+            "TRISC-KERNEL",
+            "ERISC-KERNEL"
+          ]
+        },
+        "type": "op_first_last"
+      },
+      "device_ncrisc_kernel_duration": {
+        "across": "ops",
+        "end": {
+          "core": "ANY",
+          "risc": "NCRISC",
+          "zone_name": "NCRISC-KERNEL"
+        },
+        "start": {
+          "core": "ANY",
+          "risc": "NCRISC",
+          "zone_name": "NCRISC-KERNEL"
+        },
+        "type": "op_first_last"
+      },
+      "device_trisc0_kernel_duration": {
+        "across": "ops",
+        "end": {
+          "core": "ANY",
+          "risc": "TRISC_0",
+          "zone_name": "TRISC-KERNEL"
+        },
+        "start": {
+          "core": "ANY",
+          "risc": "TRISC_0",
+          "zone_name": "TRISC-KERNEL"
+        },
+        "type": "op_first_last"
+      },
+      "device_trisc1_kernel_duration": {
+        "across": "ops",
+        "end": {
+          "core": "ANY",
+          "risc": "TRISC_1",
+          "zone_name": "TRISC-KERNEL"
+        },
+        "start": {
+          "core": "ANY",
+          "risc": "TRISC_1",
+          "zone_name": "TRISC-KERNEL"
+        },
+        "type": "op_first_last"
+      },
+      "device_trisc2_kernel_duration": {
+        "across": "ops",
+        "end": {
+          "core": "ANY",
+          "risc": "TRISC_2",
+          "zone_name": "TRISC-KERNEL"
+        },
+        "start": {
+          "core": "ANY",
+          "risc": "TRISC_2",
+          "zone_name": "TRISC-KERNEL"
+        },
+        "type": "op_first_last"
+      }
+    }
+  }
+}
