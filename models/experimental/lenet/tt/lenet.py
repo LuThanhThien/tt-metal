@@ -17,7 +17,7 @@ class TtLeNet5(nn.Module):
     def __init__(self, num_classes, device, state_dict):
         super().__init__()
         self.device = device
-
+        
         conv1_weight = state_dict["layer1.0.weight"]
         conv1_bias = state_dict["layer1.0.bias"]
         self.conv1 = fallback_ops.Conv2d(conv1_weight, conv1_bias, 1, 6, kernel_size=5, stride=1, padding=0)

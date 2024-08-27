@@ -30,6 +30,7 @@ def merge_perf_files(fname, perf_fname, expected_cols):
     merge_res.write(f"{cols} \n")
 
     csvfiles.sort()
+    logger.info(f"csvfiles: {csvfiles}")
     for csvfile in csvfiles:
         row_name = csvfile.replace("perf_", "")
         row_name = row_name.replace(f"{today}", "")

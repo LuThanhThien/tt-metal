@@ -54,10 +54,15 @@ def model_location_generator():
         internal_cache_path = Path("/opt/tt-metal-models") / model_folder / model_version
         has_internal_cache = internal_cache_path.exists()
         if has_internal_weka:
+            logger.info(f"Using internal weka path: {internal_weka_path}")
             return internal_weka_path
         elif has_internal_cache:
+            logger.info(f"Using internal cache path: {internal_cache_path}")    
             return internal_cache_path
         else:
+            logger.info(f"Using default path: {model_folder / model_version}")
+            if not (model_folder / model_version).exists():
+                logger.warning(f"Model not found at default path: {model_folder / model_version}")
             return model_version
 
     return model_location_generator_

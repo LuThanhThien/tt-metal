@@ -56,6 +56,7 @@ def run_bert_question_and_answering_inference(
     disable_persistent_kernel_cache()
 
     model = str(model_location_generator(model_name, model_subdir="Bert"))
+    logger.info("Model string: " + model)
     hugging_face_reference_model = BertForQuestionAnswering.from_pretrained(model, torchscript=False)
     hugging_face_reference_model.eval()
 

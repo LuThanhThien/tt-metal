@@ -90,6 +90,8 @@ def prep_device_perf_report(
             csvfile.write("\n")
             csvfile.write(values)
 
+        logger.info("Results written to: " + csv_path)
+
     formatted_results = {}
     for key, value in post_processed_results.items():
         formatted_results[key] = "{:.4f}".format(value)

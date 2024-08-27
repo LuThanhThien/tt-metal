@@ -33,3 +33,7 @@ def test_gs_demo(device, mnist_sample_input, model_location_generator):
         sample_image.save("input_image.jpg")
         logger.info(f"Input image saved as input_image.jpg.")
         logger.info(f"GS's predicted Output: {tt_predicted[0][0][0]}.")
+
+
+if __name__ == "__main__":
+    test_gs_demo()
