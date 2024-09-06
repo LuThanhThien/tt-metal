@@ -133,13 +133,11 @@ def enable_persistent_kernel_cache():
     )
     tt_lib.device.EnablePersistentKernelCache()
 
-
 def disable_persistent_kernel_cache():
     """
     Disables persistent compiled kernel caching. This is the default state.
     """
     tt_lib.device.DisablePersistentKernelCache()
-
 
 def enable_compilation_reports():
     """
@@ -147,20 +145,17 @@ def enable_compilation_reports():
     """
     return tt_lib.device.EnableCompilationReports()
 
-
 def disable_compilation_reports():
     """
     Disables generating reports of compilation statistics
     """
     return tt_lib.device.DisableCompilationReports()
 
-
 def enable_memory_reports():
     """
     Enables generating reports of memory allocation statistics in .reports/tt_metal dir
     """
     return tt_lib.device.EnableMemoryReports()
-
 
 def disable_memory_reports():
     """
@@ -586,8 +581,8 @@ def is_close(a, b, rtol=1e-2, atol=1e-2, max_mag=2.0, max_mag_fraction=0.02):
         logger.info(f"****    at {debug_index} --- HTWT={ht} {wt} HW={h} {w}")
 
     return torch.all(or_abs_rel)
-
-
+    
+        
 def comp_allclose(golden, calculated, rtol=1e-05, atol=1e-08):
     if golden.dtype != calculated.dtype:
         calculated = calculated.type(golden.dtype)

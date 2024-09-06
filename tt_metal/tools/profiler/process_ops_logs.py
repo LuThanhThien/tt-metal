@@ -426,6 +426,7 @@ def generate_reports(ops, deviceOps, signposts, outputFolder, date, nameAppend):
             if type(row) is str and "sp" in row:
                 headerAndMessage = signposts[row]["data"].split(": ")[-1].split("\n")
                 rowDict["OP CODE"] = headerAndMessage[0]
+                logger.debug("headerAndMessage[0] = ", headerAndMessage[0])
                 rowDict["OP TYPE"] = "signpost"
                 if len(headerAndMessage) > 1:
                     rowDict["ATTRIBUTES"] = headerAndMessage[1]
@@ -518,7 +519,16 @@ def generate_reports(ops, deviceOps, signposts, outputFolder, date, nameAppend):
             for field, fieldData in rowDict.items():
                 rowDict[field] = str(fieldData).replace(",", ";")
             writer.writerow(rowDict)
+            
     logger.info(f"OPs csv generated at: {allOpsCSVPath}")
+    # Thien Lu DEV 2024.08.27
+    '''
+    Adding new features: compute FPS from Tracy logs
+    Test script (Resnet50): 
+    ./tt_metal/tools/profiler/profile_this.py -n resnet -c "pytest models/demos/resnet/tests/test_metal_resnet50_performant.py::test_run_resnet50_inference[False-LoFi-activations_BFLOAT8_B-weights_BFLOAT8_B-batch_20-device_params0]"
+    '''
+    from dev.py.report.compute_fps import compute_fps
+    compute_fps(allOpsCSVPath, outFolder)
 
 
 def process_ops(output_folder, name_append, date):

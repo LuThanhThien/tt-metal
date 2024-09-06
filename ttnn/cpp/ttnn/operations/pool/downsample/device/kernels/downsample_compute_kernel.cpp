@@ -28,7 +28,7 @@ void MAIN {
     uint32_t untilize_downsampled_cb_index = get_compile_time_arg_val(4); // full output size
     uint32_t tilize_out_cb_index = get_compile_time_arg_val(5); // final output = sharded output
     uint32_t num_input_tiles_in_row = get_compile_time_arg_val(6); // same for both local and halo inputs
-
+    
     uint32_t num_output_rows_of_tiles = get_compile_time_arg_val(7);
     uint32_t num_output_tiles_in_row = get_compile_time_arg_val(8);
     uint32_t num_output_tiles = num_output_rows_of_tiles * num_output_tiles_in_row;

@@ -2,6 +2,7 @@
 #define TTSIM_H
 
 #include <iostream>
+#include <cstdlib> 
 
 #define HOST "HOST" 
 #define READER "READER"
@@ -15,6 +16,8 @@
 
 #define PRINT_TITLE(title) std::cout << SLASH << "//\t\t" << title << "\n" << SLASH << std::endl
 #define PRINT_HOST std::cout << "[" << HOST << "] "
+#define PRINT_ERROR std::cout << "[ERROR] "
+#define PRINT_DEBUG if (std::getenv("PRINT_DEBUG") != nullptr) std::cout << "[DEBUG] "
 #define PRINT_CORE(processor_type, core_id) std::cout << "[" << processor_type << " CORE " << core_id << "] "
 #define PRINT_LEVEL(level) for(int i = 0; i < (level); ++i) std::cout << "\t"
 

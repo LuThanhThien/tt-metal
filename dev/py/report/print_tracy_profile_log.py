@@ -1,8 +1,7 @@
 from pathlib import Path 
-from dev.py.common import *
+from dev.py import *
 from tt_metal.tools.profiler.common import *
 from loguru import logger
-import argparse 
 
 def print_tracy_profile_log(output_result):
     output_path = Path(TT_METAL_HOME / output_result )

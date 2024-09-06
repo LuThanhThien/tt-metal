@@ -8,14 +8,11 @@
 
 #pragma once
 
-#include "tt_metal/common/math.hpp"
-#include "tt_metal/common/core_coord.h"
+#include "core_struct.h"
+#include "ttsim.h"
+#include <set>
+#include <tuple>
 
-#include "tt_metal/host_api.hpp"
-
-
-namespace tt {
-namespace tt_metal {
 
 // Given a number of tiles and number of cores available
 // Set the largest number of cores less than the number of tiles
@@ -63,43 +60,70 @@ inline int find_max_block_size(uint32_t val, uint32_t max_block_size=8) {
     return result;
 }
 
+inline void print_set_corerange(std::set<CoreRange> &set) {
+    auto itor = set.begin();
+    for (int i = 0; i < set.size(); i++) {
+        PRINT_LEVEL(1);
+        CoreRange it = *itor++;
+        PRINT_HOST << "set[" << i << "] = " << it.str() << ENDL;
+    }
+}
+
 inline std::set<CoreRange> num_cores_to_corerange_set(uint32_t target_num_cores, CoreCoord grid_size, bool row_wise = false) {
-    // for example: all_cores(num_cores_to_corerange_set(7, {(0,0), (2,3)}, all))
-    // target_num_cores = 7, num_cores_x = 3, num_cores_y = 4, row_wise = [true, false]
 	uint32_t num_cores_x = grid_size.x;
     uint32_t num_cores_y = grid_size.y;
 
-	TT_ASSERT(target_num_cores <= num_cores_x * num_cores_y, "Target number of cores is greater than total number of cores");
+    PRINT_HOST << "num_cores_to_corerange_set(target_num_cores=" << target_num_cores << ",grid_size=" << grid_size.str() << ",row_wise=" << row_wise << ")" << ENDL;
+
+	// TT_ASSERT(target_num_cores <= num_cores_x * num_cores_y, "Target number of cores is greater than total number of cores");
+    if (target_num_cores > num_cores_x * num_cores_y) {
+        PRINT_ERROR << "Target number of cores is greater than total number of cores\n";
+        EXIT_FAILURE;
+    }
 	std::set<CoreRange> all_cores_set;
     if (row_wise) {
         if (target_num_cores > num_cores_x) {
-            CoreRange start_block({0, 0}, {num_cores_x - 1, target_num_cores / num_cores_x - 1});   // start_block = {(0,0), (2,1)}
+            CoreRange start_block({0, 0}, {num_cores_x - 1, target_num_cores / num_cores_x - 1});
+            PRINT_LEVEL(1); PRINT_DEBUG << "insert start_block: " << start_block.str() << ENDL;
             all_cores_set.insert(start_block);
             auto leftover_stick_size = target_num_cores % num_cores_x;
             if (leftover_stick_size > 0) {
                 auto leftover_start_y = target_num_cores / num_cores_x;
+                PRINT_LEVEL(1); PRINT_DEBUG << "leftover_stick_size=" << leftover_stick_size << ENDL;
+                PRINT_LEVEL(1); PRINT_DEBUG << "leftover_start_y=" << leftover_start_y << ENDL;
                 CoreRange leftover_block({0, leftover_start_y}, {leftover_stick_size - 1, leftover_start_y});
+                PRINT_LEVEL(1); PRINT_DEBUG << "insert leftover_block: " << leftover_block.str() << ENDL;    
                 all_cores_set.insert(leftover_block);
             }
         } else {
             CoreRange start_block({0, 0}, {target_num_cores - 1, 0});
             all_cores_set.insert(start_block);
+            PRINT_LEVEL(1); PRINT_DEBUG << "insert start_block: " << start_block.str() << ENDL;
         }
     } else {
         if (target_num_cores > num_cores_y) {
             CoreRange start_block({0, 0}, {target_num_cores / num_cores_y - 1, num_cores_y - 1});
             all_cores_set.insert(start_block);
+            PRINT_LEVEL(1); PRINT_DEBUG << "insert start_block: " << start_block.str() << ENDL;
             auto leftover_stick_size = target_num_cores % num_cores_y;
+
             if (leftover_stick_size > 0) {
                 auto leftover_start_x = target_num_cores / num_cores_y;
+                PRINT_LEVEL(1); PRINT_DEBUG << "leftover_stick_size=" << leftover_stick_size << ENDL;
+                PRINT_LEVEL(1); PRINT_DEBUG << "leftover_start_x=" << leftover_start_x << ENDL;
                 CoreRange leftover_block({leftover_start_x, 0}, {leftover_start_x, leftover_stick_size - 1});
+                PRINT_LEVEL(1); PRINT_DEBUG << "insert leftover_block: " << leftover_block.str() << ENDL;    
                 all_cores_set.insert(leftover_block);
             }
         } else {
             CoreRange start_block({0, 0}, {0, target_num_cores - 1});
             all_cores_set.insert(start_block);
+            PRINT_LEVEL(1); PRINT_DEBUG << "insert start_block: " << start_block.str() << ENDL;
         }
     }
+
+    PRINT_HOST << "Returning all_cores_set" << ENDL;
+    print_set_corerange(all_cores_set);
 	return all_cores_set;
 }
 
@@ -109,18 +133,13 @@ inline std::set<CoreRange> num_cores_to_corerange_set(uint32_t target_num_cores,
 // If it can be evenly divided, the second CoreRangeSet is the same as the first, and the last is empty
 // The last 2 args are the units of work for the two core grids
 inline std::tuple<uint32_t, CoreRangeSet, CoreRangeSet, CoreRangeSet, uint32_t, uint32_t> split_work_to_cores(CoreCoord grid_size, uint32_t units_to_divide, bool row_wise = false) {
-    // unit_to_devide is number of output tiles
-    // row_wise TODO: add description
-
-    // for example we have grid_size = {(0,0), (2,3)}, num_cores_x = 3, num_cores_y = 4, units_to_devide = 7
-	uint32_t num_cores_x = grid_size.x, num_cores_y = grid_size.y;  
-	auto target_num_cores = std::min(units_to_divide, num_cores_x * num_cores_y);   // get min target cores, target_num_cores = min(4, 12) = 7
-    // all_cores(num_cores_to_corerange_set(4, {(0,0), (2,3)}, all))
-	CoreRangeSet all_cores(num_cores_to_corerange_set(target_num_cores, grid_size, row_wise)); 
+    PRINT_DEBUG << "split_work_to_cores(grid_size=" << grid_size.str() << ",units_to_divide=" << units_to_divide << ",row_wise=" << row_wise << ")" << ENDL;
+	uint32_t num_cores_x = grid_size.x, num_cores_y = grid_size.y;
+	auto target_num_cores = std::min(units_to_divide, num_cores_x * num_cores_y);
+	CoreRangeSet all_cores(num_cores_to_corerange_set(target_num_cores, grid_size, row_wise));
 
 	std::set<CoreRange> core_group_1_set;
 	std::set<CoreRange> core_group_2_set;
-    // init group 2 to 0, group 1 as evenly divided
 	uint32_t units_per_core_group_1 = units_to_divide / target_num_cores;
 	uint32_t units_per_core_group_2 = 0;
     // Evenly divided units to all target cores
@@ -176,8 +195,15 @@ inline std::tuple<uint32_t, CoreRangeSet, CoreRangeSet, CoreRangeSet, uint32_t, 
 	}
 	CoreRangeSet core_group_1(core_group_1_set);
 	CoreRangeSet core_group_2(core_group_2_set);
+    
+    PRINT_HOST << "Returning: " << ENDL;
+    PRINT_HOST << "core_group_1 is: " << core_group_1.str() << ENDL;
+    if (core_group_2_set.size() > 0) {
+        PRINT_HOST << "core_group_2 is: " << core_group_2.str() << ENDL;
+    } else {
+        PRINT_HOST << "core_group_2 is empty" << ENDL;
+    }
 
 	return std::make_tuple(target_num_cores, all_cores, core_group_1, core_group_2, units_per_core_group_1, units_per_core_group_2);
 }
 
-} } // namespace tt::tt_metal

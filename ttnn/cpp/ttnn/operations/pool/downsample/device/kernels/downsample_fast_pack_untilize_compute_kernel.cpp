@@ -58,7 +58,7 @@ void MAIN {
             cb_pop_front(halo_prev_input_cb_index, num_input_tiles_in_row);
         }
     }
-
+    
     // Unilize prev core's halo region - 1 row of tiles
     // untilize_block(prev_core_input_cb_index, num_input_tiles_per_block, untilize_cb_index);
 

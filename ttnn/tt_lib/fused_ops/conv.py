@@ -449,7 +449,10 @@ def resnet50_1x1_conv_s2_as_downsample_and_matmul(
 
     def conv_(activation):
         # downsample op
+        logger.info("BEFORE DOWNSAMPLE: activation.shape = {}".format(activation.shape))
         output = ttnn.downsample(activation, downsample_params, dtype=output_dtype)
+        logger.info("AFTER DOWNSAMPLE: activation.shape = {}".format(activation.shape))
+        logger.info("AFTER DOWNSAMPLE: output.shape = {}".format(output.shape))
         output = ttnn.linear(
             output,
             weight_on_device,
