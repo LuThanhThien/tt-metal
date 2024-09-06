@@ -12,7 +12,7 @@ file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 # Add the includes
 set(TT_METAL_HOME $ENV{TT_METAL_HOME})
 include_directories(
-    ${TT_METAL_HOME}/dev/ttsim/cpp
+    ${TT_METAL_HOME}/ttsim/cpp
     ${TT_METAL_HOME}
 )
 

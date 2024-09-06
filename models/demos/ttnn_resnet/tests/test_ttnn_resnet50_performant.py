@@ -83,13 +83,6 @@ def test_run_resnet50_inference(
         pytest.skip("Skipping batch size 8 due to memory config issue")
     if is_wormhole_b0() and batch_size == 20:
         pytest.skip("Skipping batch size 20 for Wormhole B0 due to fitting issue")
-
-    print(device)
-    print(batch_size)
-    print(act_dtype)
-    print(weight_dtype)
-    print(math_fidelity)
-    print(model_location_generator)
     test_infra = create_test_infra(
         device,
         batch_size,

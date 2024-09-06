@@ -389,7 +389,7 @@ class InceptionV4(nn.Module):
             x = F.dropout(x, p=self.drop_rate, training=self.training)
         return x if pre_logits else self.last_linear(x)
 
-    def forward(self, x) -> torch.Tensor:
+    def forward(self, x):
         x = self.forward_features(x)
         x = self.forward_head(x)
         return x

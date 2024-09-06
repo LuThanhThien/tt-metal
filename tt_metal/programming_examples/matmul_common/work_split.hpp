@@ -64,8 +64,6 @@ inline int find_max_block_size(uint32_t val, uint32_t max_block_size=8) {
 }
 
 inline std::set<CoreRange> num_cores_to_corerange_set(uint32_t target_num_cores, CoreCoord grid_size, bool row_wise = false) {
-    // for example: all_cores(num_cores_to_corerange_set(7, {(0,0), (2,3)}, all))
-    // target_num_cores = 7, num_cores_x = 3, num_cores_y = 4, row_wise = [true, false]
 	uint32_t num_cores_x = grid_size.x;
     uint32_t num_cores_y = grid_size.y;
 
@@ -73,7 +71,7 @@ inline std::set<CoreRange> num_cores_to_corerange_set(uint32_t target_num_cores,
 	std::set<CoreRange> all_cores_set;
     if (row_wise) {
         if (target_num_cores > num_cores_x) {
-            CoreRange start_block({0, 0}, {num_cores_x - 1, target_num_cores / num_cores_x - 1});   // start_block = {(0,0), (2,1)}
+            CoreRange start_block({0, 0}, {num_cores_x - 1, target_num_cores / num_cores_x - 1});
             all_cores_set.insert(start_block);
             auto leftover_stick_size = target_num_cores % num_cores_x;
             if (leftover_stick_size > 0) {
@@ -109,18 +107,12 @@ inline std::set<CoreRange> num_cores_to_corerange_set(uint32_t target_num_cores,
 // If it can be evenly divided, the second CoreRangeSet is the same as the first, and the last is empty
 // The last 2 args are the units of work for the two core grids
 inline std::tuple<uint32_t, CoreRangeSet, CoreRangeSet, CoreRangeSet, uint32_t, uint32_t> split_work_to_cores(CoreCoord grid_size, uint32_t units_to_divide, bool row_wise = false) {
-    // unit_to_devide is number of output tiles
-    // row_wise TODO: add description
-
-    // for example we have grid_size = {(0,0), (2,3)}, num_cores_x = 3, num_cores_y = 4, units_to_devide = 7
-	uint32_t num_cores_x = grid_size.x, num_cores_y = grid_size.y;  
-	auto target_num_cores = std::min(units_to_divide, num_cores_x * num_cores_y);   // get min target cores, target_num_cores = min(4, 12) = 7
-    // all_cores(num_cores_to_corerange_set(4, {(0,0), (2,3)}, all))
-	CoreRangeSet all_cores(num_cores_to_corerange_set(target_num_cores, grid_size, row_wise)); 
+	uint32_t num_cores_x = grid_size.x, num_cores_y = grid_size.y;
+	auto target_num_cores = std::min(units_to_divide, num_cores_x * num_cores_y);
+	CoreRangeSet all_cores(num_cores_to_corerange_set(target_num_cores, grid_size, row_wise));
 
 	std::set<CoreRange> core_group_1_set;
 	std::set<CoreRange> core_group_2_set;
-    // init group 2 to 0, group 1 as evenly divided
 	uint32_t units_per_core_group_1 = units_to_divide / target_num_cores;
 	uint32_t units_per_core_group_2 = 0;
     // Evenly divided units to all target cores

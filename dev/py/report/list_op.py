@@ -2,10 +2,10 @@ import os
 import pathlib
 import re
 from loguru import logger
-from dev.py import *
+import dev.py.common as c
 
 EXCLUDE_SCAN = [
-	pathlib.Path(TT_METAL_HOME) / "python_env",
+	pathlib.Path(c.TT_METAL_HOME) / "python_env",
 ]
 
 def get_py_files(directory):
@@ -48,8 +48,8 @@ def collect_ttnn_apis(python_files):
     return ttnn_apis
 
 def main():
-    logger.info(f"TT HOME: {TT_METAL_HOME}")
-    python_files = get_py_files(TT_METAL_HOME)
+    logger.info(f"TT HOME: {c.TT_METAL_HOME}")
+    python_files = get_py_files(c.TT_METAL_HOME)
     ttnn_apis = collect_ttnn_apis(python_files)
     
     logger.info(f"Collected {len(ttnn_apis)} unique ttnn.* functions/ classes:")

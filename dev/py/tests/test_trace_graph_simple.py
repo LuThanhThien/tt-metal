@@ -1,6 +1,4 @@
 import torch, ttnn
-from dev.py.common import *
-
 
 device_id = 0
 device = ttnn.open_device(device_id=device_id)
@@ -11,8 +9,6 @@ with ttnn.tracer.trace():
 	output_tensor = ttnn.exp(input_tensor)
 	torch_output_tensor = ttnn.to_torch(output_tensor)
 
-save_path = DEV_GEN_DIR / "trace_graph_simple.svg"
-save_path.parent.mkdir(parents=True, exist_ok=True)
-ttnn.tracer.visualize(torch_output_tensor, file_name=save_path)
+ttnn.tracer.visualize(torch_output_tensor, file_name="trace_graph_simple.svg")
 
 ttnn.close_device(device)

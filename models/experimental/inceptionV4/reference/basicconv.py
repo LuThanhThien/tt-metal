@@ -24,5 +24,3 @@ class BasicConv2d(nn.Module):
         x = self.bn(x)
         x = self.relu(x)
         return x
-
-

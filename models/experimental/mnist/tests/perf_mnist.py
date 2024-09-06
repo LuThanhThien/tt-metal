@@ -47,7 +47,6 @@ def test_perf(device, expected_inference_time, expected_compile_time, model_loca
         test_input, _ = next(iter(dataloader))
         tt_input = torch2tt_tensor(test_input, device, tt_layout=tt_lib.tensor.Layout.ROW_MAJOR)
 
-        profiler.enable()
         profiler.start(cpu_key)
         pt_out = pt_model(test_input)
         tt_lib.device.Synchronize(device)
@@ -70,7 +69,6 @@ def test_perf(device, expected_inference_time, expected_compile_time, model_loca
     first_iter_time = profiler.get(first_key)
     second_iter_time = profiler.get(second_key)
     cpu_time = profiler.get(cpu_key)
-    profiler.print()
     compile_time = first_iter_time - second_iter_time
 
     # TODO: expected compile time (100 s) and expected inference time (100 s) are not real values

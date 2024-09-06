@@ -53,7 +53,7 @@ def run_layernorm_mix_precision_tests(test_id, in_dtype, gamma_dtype, in0_mem_co
                 math_approx_mode=True,
                 fp32_dest_acc_en=True if in_dtype == ttl.tensor.DataType.FLOAT32 else False,
             )
-        
+
         if test_id == 0:
             ttz = ttnn.layer_norm(
                 in0_t,

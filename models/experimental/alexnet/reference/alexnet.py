@@ -6,4 +6,3 @@ class AlexNet(nn.Module):
         super(AlexNet, self).__init__()
         self.model = models.alexnet(pretrained=True)
         self.model.eval()
-

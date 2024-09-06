@@ -81,7 +81,7 @@ def Layernorm(gamma: float, beta: float, epsilon: float, H, W, device, num_dims=
         #     device
         # )
         beta_ = beta
-    
+
     epsilon_ = tensor.Tensor(
         [epsilon] + [0.0 for _ in range(32 * 32 - 1)],
         [1, 1, 32, 32],
