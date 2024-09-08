@@ -1,0 +1,1 @@
+WH_ARCH_YAML=wormhole_b0_80_arch_eth_dispatch.yaml ./tt_metal/tools/profiler/profile_this.py -c "pytest models/demos/ttnn_resnet/tests/test_ttnn_resnet50_performant.py::test_run_resnet50_inference[16-act_dtype0-weight_dtype0-math_fidelity0-device_params0]"

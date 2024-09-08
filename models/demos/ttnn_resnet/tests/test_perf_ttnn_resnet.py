@@ -351,6 +351,7 @@ def run_perf_resnet(
 
     cpu_time = profiler.get(cpu_key)
     compile_time = first_iter_time - 2 * inference_time_avg
+    print("prep_perf_report starting...")
     prep_perf_report(
         model_name=f"ttnn_{model_version}_batch_size{batch_size}",
         batch_size=batch_size,

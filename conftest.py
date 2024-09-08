@@ -57,7 +57,7 @@ def model_location_generator():
             logger.info(f"Using internal weka path: {internal_weka_path}")
             return internal_weka_path
         elif has_internal_cache:
-            logger.info(f"Using internal cache path: {internal_cache_path}")    
+            logger.info(f"Using internal cache path: {internal_cache_path}")
             return internal_cache_path
         else:
             logger.info(f"Using default path: {model_folder / model_version}")
@@ -120,6 +120,7 @@ def pcie_devices(request, device_params):
 
     print("Getting all PCIe devices")
     import time
+
     time.sleep(1000 * 10)
 
     num_devices = ttl.device.GetNumPCIeDevices()
@@ -363,7 +364,7 @@ def pytest_addoption(parser):
     parser.addoption(
         "--device-id",
         type=int,
-        default=3,      # Lu Thien 2024.08.21 change default device id to prevent conflict with other users
+        default=0,
         help="Target device id",
     )
     parser.addoption(
