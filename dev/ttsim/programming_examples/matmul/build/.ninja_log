@@ -1,0 +1,11 @@
+# ninja log v6
+3	669	1724913724609042469	CMakeFiles/matmul_single.dir/matmul_single.cpp.o	409f0f6c174a4baa
+4	722	1724913724609042469	CMakeFiles/matmul_multi.dir/matmul_multi.cpp.o	92b97a59eca2200e
+670	730	1724913725277042504	matmul_single	ad7204da3c3c8fb
+3	768	1724913724609042469	CMakeFiles/matmul_multi_reuse.dir/matmul_multi_reuse.cpp.o	614e7234a6edb051
+722	782	1724913725329042507	matmul_multi	df14edf28cbd34f0
+1	795	1724913724605042468	CMakeFiles/test_split_core_helper_function.dir/test_split_core_helper_function.cpp.o	fd183d93a0a67e8b
+768	828	1724913725373042509	matmul_multi_reuse	fa1bc87de922ba28
+3	853	1724913724609042469	CMakeFiles/matmul_multi_reuse_mcast.dir/matmul_multi_reuse_mcast.cpp.o	6a08a8cb0244a130
+795	854	1724913725401042511	test_split_core_helper_function	4848bd61d6d03044
+854	914	1724913725461042514	matmul_multi_reuse_mcast	8d6ca22853ca3e03

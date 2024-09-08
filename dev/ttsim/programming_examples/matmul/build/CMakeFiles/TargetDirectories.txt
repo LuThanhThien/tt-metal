@@ -1,0 +1,8 @@
+/home/thienluu/tt/tt-metal/dev/ttsim/programming_examples/matmul/build/CMakeFiles/rebuild_cache.dir
+/home/thienluu/tt/tt-metal/dev/ttsim/programming_examples/matmul/build/CMakeFiles/edit_cache.dir
+/home/thienluu/tt/tt-metal/dev/ttsim/programming_examples/matmul/build/CMakeFiles/test_split_core_helper_function.dir
+/home/thienluu/tt/tt-metal/dev/ttsim/programming_examples/matmul/build/CMakeFiles/matmul_single.dir
+/home/thienluu/tt/tt-metal/dev/ttsim/programming_examples/matmul/build/CMakeFiles/matmul_multi_reuse_mcast.dir
+/home/thienluu/tt/tt-metal/dev/ttsim/programming_examples/matmul/build/CMakeFiles/SingleMatmul.dir
+/home/thienluu/tt/tt-metal/dev/ttsim/programming_examples/matmul/build/CMakeFiles/matmul_multi_reuse.dir
+/home/thienluu/tt/tt-metal/dev/ttsim/programming_examples/matmul/build/CMakeFiles/matmul_multi.dir

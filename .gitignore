@@ -9,7 +9,7 @@ runtime
 test_hlk_args_init_gen
 tt_build
 tt_debug
-build
+/build
 /build_*/
 !build_metal.sh
 /python_env/

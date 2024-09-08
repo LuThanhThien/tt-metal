@@ -1,0 +1,2 @@
+/home/thienluu/tt/tt-metal/ttsim/build/CMakeFiles/rebuild_cache.dir
+/home/thienluu/tt/tt-metal/ttsim/build/CMakeFiles/edit_cache.dir
