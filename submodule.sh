@@ -4,6 +4,9 @@
 THIRD_PARTY_DIR="tt_metal/third_party"
 CONFIG_FILE="submodule_config.txt"
 
+#Remove cache before clone submodule
+git rm --cached tt_metal/third_party
+
 # Ensure the third_party directory exists
 mkdir -p "$THIRD_PARTY_DIR"
 
