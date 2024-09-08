@@ -1088,6 +1088,7 @@ def pad_and_fold_conv_activation_for_unity_stride(activation_pyt_nchw_tensor, pa
     activation_pyt_padded = torch.nn.functional.pad(
         activation_pyt_nchw_tensor, (pad_w, pad_w, pad_h, pad_h, 0, C - activation_pyt_nchw_tensor.shape[1])
     )
+    print("activation_pyt_padded.shape", activation_pyt_padded.shape)
     # Fold the activation face by stride depth wise i.e. C,H,W -> C*stride_h*stride_w, H/stride_h, W/stride_w
     assert activation_pyt_padded.shape[2] % stride_h == 0
     activation_pyt_padded_folded = torch.zeros(
@@ -1171,3 +1172,4 @@ def get_debug_tensor(num_pages_width, num_pages_height, dtype, page_width=32, pa
             torch_tensor = torch.cat((torch_tensor, tile_row), 2)
 
     return torch_tensor
+

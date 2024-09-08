@@ -9,7 +9,8 @@ from torchvision import models
 from transformers import AutoImageProcessor
 import pytest
 import tt_lib
-import ttnn
+import numpy as np
+
 
 
 from models.utility_functions import (
@@ -82,6 +83,7 @@ def run_resnet_imagenet_inference(
         predictions = []
         inputs, labels = get_batch(data_loader, image_processor)
         tt_inputs = tt_resnet50.preprocessing(inputs)
+        
         tt_output = tt_resnet50(tt_inputs)
         tt_output = tt_output.cpu().to_torch().to(torch.float)
         prediction = tt_output[:, 0, 0, :].argmax(dim=-1)
@@ -124,12 +126,19 @@ def run_resnet_inference(
 
     profiler.start(f"processing_inputs")
     inputs = None
+    shape_before = None
+    shape_after = None
     for i in range(batch_size):
         input_image = images[i].image
         if input_image.mode == "L":
             input_image = input_image.convert(mode="RGB")
         input = image_processor(input_image, return_tensors="pt")
         input = input["pixel_values"]
+        if shape_before != np.array(input_image).shape or shape_after != input.shape:
+            shape_before = np.array(input_image).shape
+            shape_after = input.shape
+            print(f"input_image[{i}].shape before: {shape_before}")
+            print(f"input_image[{i}].shape after: {shape_after}")
         if inputs == None:
             inputs = input
         else:
@@ -157,12 +166,14 @@ def run_resnet_inference(
     profiler.end(f"move_weights")
 
     profiler.start(f"preprocessing")
+    print("inputs.shape: ", inputs.shape)
     tt_inputs = tt_resnet50.preprocessing(inputs)
     profiler.end(f"preprocessing")
 
     profiler.disable()
     # Use force enable to only record this profiler call while others are disabled
     profiler.start("first_model_run_with_compile", force_enable=True)
+    print("tt_inputs.shape: ", tt_inputs.shape)
     tt_out = tt_resnet50(tt_inputs)
     tt_lib.device.Synchronize(device)
     profiler.end("first_model_run_with_compile", force_enable=True)
@@ -198,6 +209,7 @@ def run_resnet_inference(
         - (profiler.get("model_run_for_inference") / SINGLE_RUN),
         f"inference_for_single_run_batch_{batch_size}_without_cache": profiler.get("first_model_run_with_compile"),
         f"inference_for_{SINGLE_RUN}_run_batch_{batch_size}_without_cache": profiler.get("model_run_for_inference"),
+        f"inference_for_{SINGLE_RUN}_run_batch_{batch_size}_with_cache": profiler.get("model_run_for_inference"),
         "inference_throughput": (SINGLE_RUN * batch_size) / profiler.get("model_run_for_inference"),
         "post_processing": profiler.get("post_processing"),
     }
@@ -209,7 +221,7 @@ def run_resnet_inference(
         f"inference time for single run of model with batch size {batch_size} without using cache: {measurements[f'inference_for_single_run_batch_{batch_size}_without_cache']} s"
     )
     logger.info(
-        f"inference time for {SINGLE_RUN} run(s) of model with batch size {batch_size} and using cache: {measurements[f'inference_for_{SINGLE_RUN}_run_batch_{batch_size}_without_cache']} s"
+        f"inference time for {SINGLE_RUN} run(s) of model with batch size {batch_size} and using cache: {measurements[f'inference_for_{SINGLE_RUN}_run_batch_{batch_size}_with_cache']} s"
     )
     logger.info(f"inference throughput: {measurements['inference_throughput'] } inputs/s")
     logger.info(f"post processing time: {measurements['post_processing']} s")

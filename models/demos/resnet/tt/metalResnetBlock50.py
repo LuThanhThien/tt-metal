@@ -2084,6 +2084,7 @@ class ResNet(nn.Module):
     def preprocessing(self, x: torch.Tensor) -> tt_lib.tensor:
         if self.sharded:
             x = pad_and_fold_conv_activation_for_unity_stride(x, 3, 3, 2, 2)
+            print("x.shape after pad_and_fold_conv_activation_for_unity_stride", x.shape)
             x = torch.permute(x, (0, 2, 3, 1))
             x = x.reshape(
                 1,
@@ -2093,7 +2094,7 @@ class ResNet(nn.Module):
             )
             input_size_to_shard_evenly = _nearest_y(x.shape[2], self.first_conv_num_cores_nhw * 32)
             x = torch.nn.functional.pad(x, (0, 0, 0, input_size_to_shard_evenly - x.shape[2], 0, 0))
-
+            print("x.shape after pad", x.shape)
             x = tt_lib.tensor.Tensor(x, tt_lib.tensor.DataType.BFLOAT16)
         else:
             extra_padding_for_32B_alignment = 25
@@ -2165,6 +2166,10 @@ class ResNet(nn.Module):
 
     def forward(self, x: tt_lib.tensor, write_event=None, op_event=None, final_out_mem_config=None) -> tt_lib.tensor:
         x_in = None
+        print("x.shape[0]", x.get_legacy_shape()[0])
+        print("x.shape[1]", x.get_legacy_shape()[1])
+        print("x.shape[2]", x.get_legacy_shape()[2])
+        print("x.shape[3]", x.get_legacy_shape()[3])
         if not self.sharded:
             original_A_cl_host_shape = x.get_legacy_shape()
             x = x.reshape(

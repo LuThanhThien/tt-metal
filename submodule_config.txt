@@ -1,0 +1,9 @@
+https://github.com/tenstorrent-metal/lfs.git lfs 2ba5a29
+https://github.com/pybind/pybind11.git pybind11 b8f2855
+https://github.com/tenstorrent-metal/sfpi-rel-temp.git sfpi f050df2
+https://github.com/taskflow/taskflow.git taskflow 7d9e85b
+https://github.com/tenstorrent-metal/tracy.git tracy 71d4c8d
+https://github.com/tenstorrent/tt-llk-bh.git tt_llk_blackhole cb61929
+https://github.com/tenstorrent/tt-llk-gs.git tt_llk_grayskull c31765c
+https://github.com/tenstorrent/tt-llk-wh-b0.git tt_llk_wormhole_b0 a77065e
+https://github.com/tenstorrent/tt-umd.git umd 412da2f 
