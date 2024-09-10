@@ -137,9 +137,7 @@ from ttnn.types import (
     UnaryWithParam,
     UnaryOpType,
     # Lu Thien 2024.08.21 TensorPrintProfile
-    FULL, 
-    EMPTY,
-    SHORT
+    PrintOptions,
 )
 
 from ttnn.device import (

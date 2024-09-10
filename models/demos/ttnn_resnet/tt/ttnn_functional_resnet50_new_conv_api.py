@@ -8,6 +8,7 @@ from models.utility_functions import (
     is_grayskull,
     is_wormhole_b0,
     pad_and_fold_conv_activation_for_unity_stride,
+    print_dict_summary,
 )
 from typing import List
 from loguru import logger
@@ -242,32 +243,37 @@ class resnet50Bottleneck:
 
         # conv1 is 1x1 conv
         logger.debug(f"Running conv1")
-        module_input_height = input_height
-        out, input_height, input_width, self.conv1_weight_tensor, self.conv1_bias_tensor = ttnn.conv2d(
-            input_tensor=x,
-            weight_tensor=self.conv1_weight_tensor,
-            in_channels=self.conv1_input_channels,
-            out_channels=self.conv1_output_channels,
-            device=device,
-            bias_tensor=self.conv1_bias_tensor,
-            kernel_size=(1, 1),
-            stride=(1, 1),
-            padding=(0, 0),
-            batch_size=batch_size,
-            input_height=input_height,
-            input_width=input_width,
-            conv_config=ttnn.Conv2dConfig(
-                dtype=self.model_config["ACTIVATIONS_DTYPE"],
-                weights_dtype=self.model_config["WEIGHTS_DTYPE"],
-                math_fidelity=self.model_config["MATH_FIDELITY"],
-                activation="relu",
-                height_sharding=height_sharding,
-                reshard_if_not_optimal=reshard_if_not_optimal,
-                transpose_shards=transpose_shards,
-                packer_l1_accum_enabled=packer_l1_acc,
-            ),
-            conv_op_cache=conv_op_cache,
+        print(f"self.conv1_weight_tensor.shape = {self.conv1_weight_tensor.shape}")
+
+        CONV1_ATTR = dict(
+            {
+                "input_tensor": x,
+                "weight_tensor": self.conv1_weight_tensor,
+                "in_channels": self.conv1_input_channels,
+                "out_channels": self.conv1_output_channels,
+                "device": device,
+                "bias_tensor": self.conv1_bias_tensor,
+                "kernel_size": (1, 1),
+                "stride": (1, 1),
+                "padding": (0, 0),
+                "batch_size": batch_size,
+                "input_height": input_height,
+                "input_width": input_width,
+                "conv_config": ttnn.Conv2dConfig(
+                    dtype=self.model_config["ACTIVATIONS_DTYPE"],
+                    weights_dtype=self.model_config["WEIGHTS_DTYPE"],
+                    math_fidelity=self.model_config["MATH_FIDELITY"],
+                    activation="relu",
+                    height_sharding=height_sharding,
+                    reshard_if_not_optimal=reshard_if_not_optimal,
+                    transpose_shards=transpose_shards,
+                    packer_l1_accum_enabled=packer_l1_acc,
+                ),
+                "conv_op_cache": conv_op_cache,
+            }
         )
+        module_input_height = input_height
+        out, input_height, input_width, self.conv1_weight_tensor, self.conv1_bias_tensor = ttnn.conv2d(**CONV1_ATTR)
 
         act_block_h_override = 0
         if is_grayskull():
@@ -463,9 +469,11 @@ class resnet50:
         super().__init__()
         layers = [3, 4, 6, 3]
         num_classes = 1000
-        conv_input_face_shape_hw = [224, 224]
+        conv_input_face_shape_hw = [224, 224]  ## Thien Lu COMMENT #002: conv input actual shape but not used??
         self.device = device
-        self.conv_input_face_shape_hw = conv_input_face_shape_hw
+        self.conv_input_face_shape_hw = (
+            conv_input_face_shape_hw  ## Thien Lu COMMENT #002: conv input actual shape but not used??
+        )
         self.batch_size = batch_size
         self.model_config = model_config
         self.conv_op_cache = {}
@@ -612,8 +620,9 @@ class resnet50:
         self.conv1_kernel_size = (4, 4)
         self.conv1_stride = (1, 1)
         self.conv1_padding = (0, 0)
-        self.conv1_input_height = 115
-        self.conv1_input_width = 115
+        ## Thien Lu COMMENT #001: Fix WxH of the input, this obtained from the shape of input after pad_and_fold function
+        self.conv1_input_height = 115  ## Thien Lu COMMENT #001: Fixed input height of the first conv layer
+        self.conv1_input_width = 115  ## Thien Lu COMMENT #001: Fixed input width of the first conv layer
         self.conv1_output_height = (
             (self.conv1_input_height - self.conv1_kernel_size[0] + 2 * self.conv1_padding[0]) // self.conv1_stride[0]
         ) + 1
@@ -665,6 +674,7 @@ class resnet50:
             resnet50_first_conv_stride,
             resnet50_first_conv_stride,
         )
+        print("input_tensor.shape after pad_and_fold_conv_activation_for_unity_stride: ", input_tensor.shape)
         input_tensor = torch.permute(input_tensor, (0, 2, 3, 1))
         input_tensor = ttnn.from_torch(input_tensor, dtype=ttnn.bfloat16, mesh_mapper=inputs_mesh_mapper)
         return input_tensor
@@ -683,39 +693,47 @@ class resnet50:
         else:
             logger.debug(f"==== Optimized run")
 
-        x, x_height, x_width, self.conv1_weight_tensor, self.conv1_bias_tensor = ttnn.conv2d(
-            input_tensor=input_tensor,
-            weight_tensor=self.conv1_weight_tensor,
-            in_channels=self.conv1_input_channels,
-            out_channels=self.conv1_output_channels,
-            device=device,
-            bias_tensor=self.conv1_bias_tensor,
-            kernel_size=self.conv1_kernel_size,
-            stride=self.conv1_stride,
-            padding=self.conv1_padding,
-            batch_size=self.batch_size,
-            input_height=self.conv1_input_height,
-            input_width=self.conv1_input_width,
-            conv_config=self.conv1_config,
-            conv_op_cache=conv_op_cache,
+        CONV1_ATTR = dict(
+            {
+                "input_tensor": input_tensor,
+                "weight_tensor": self.conv1_weight_tensor,
+                "in_channels": self.conv1_input_channels,
+                "out_channels": self.conv1_output_channels,
+                "device": device,
+                "bias_tensor": self.conv1_bias_tensor,
+                "kernel_size": self.conv1_kernel_size,
+                "stride": self.conv1_stride,
+                "padding": self.conv1_padding,
+                "batch_size": self.batch_size,
+                "input_height": self.conv1_input_height,
+                "input_width": self.conv1_input_width,
+                "conv_config": self.conv1_config,
+                "conv_op_cache": conv_op_cache,
+            }
         )
+        print_dict_summary(name="conv1_bias_tensor", attributes_dict=CONV1_ATTR)
+        x, x_height, x_width, self.conv1_weight_tensor, self.conv1_bias_tensor = ttnn.conv2d(**CONV1_ATTR)
         # Relu is fused with conv1
         if self.batch_size == 20:
             x = ttnn.reallocate(x)
-
+        logger.debug(f"==== Running maxpool")
         if use_new_maxpool2d:
-            x = ttnn.max_pool2d_new(
-                input_tensor=x,
-                batch_size=self.batch_size,
-                input_h=x_height,
-                input_w=x_width,
-                channels=self.conv1_output_channels,
-                kernel_size=[3, 3],
-                stride=[2, 2],
-                padding=[1, 1],
-                dilation=[1, 1],
-                device=device,
+            MAX_POOL2D_NEW_ATTR = dict(
+                {
+                    "input_tensor": x,
+                    "batch_size": self.batch_size,
+                    "input_h": x_height,
+                    "input_w": x_width,
+                    "channels": self.conv1_output_channels,
+                    "kernel_size": [3, 3],
+                    "stride": [2, 2],
+                    "padding": [1, 1],
+                    "dilation": [1, 1],
+                    "device": device,
+                }
             )
+            print_dict_summary(name="max_pool2d_new", attributes_dict=MAX_POOL2D_NEW_ATTR)
+            x = ttnn.max_pool2d_new(**MAX_POOL2D_NEW_ATTR)
         else:
             x = self.max_pool(x)
 
@@ -723,6 +741,7 @@ class resnet50:
         x_width = 56
         x = ttnn.reshape(x, (1, 1, x_height * x_width * self.batch_size, 64))
 
+        print("x.shape after maxpool: ", x.shape)
         if is_wormhole_b0():
             # TODO: fix the need to do the reshard here
             mem_config = ttnn.create_sharded_memory_config_(
@@ -734,6 +753,7 @@ class resnet50:
             )
             x = ttnn.to_memory_config(x, mem_config)
         x = ttnn.to_layout(x, ttnn.TILE_LAYOUT, dtype=self.model_config["ACTIVATIONS_DTYPE"])
+        print("x.shape after to_layout (and to_memory_config if is_wormhole_b0()): ", x.shape)
 
         if self.batch_size == 20 and not is_wormhole_b0():
             x = ttnn.reallocate(x)

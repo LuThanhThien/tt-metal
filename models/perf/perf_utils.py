@@ -2,8 +2,9 @@
 
 # SPDX-License-Identifier: Apache-2.0
 
-from os import listdir
+from os import listdir, environ
 from os.path import isfile, join
+from pathlib import Path
 import time
 import git
 from loguru import logger
@@ -130,5 +131,7 @@ def prep_perf_report(
     }
 
     model_name = model_name.replace("/", "_")
-    csv_file = f"perf_{model_name}_{comments}_{today}.csv"
+    save_dir = Path(environ.get("TT_METAL_HOME")) / "generated/profiler/perf"
+    save_dir.mkdir(parents=True, exist_ok=True)
+    csv_file = save_dir / f"perf_{model_name}_{comments}_{today}.csv"
     write_dict_to_file(csv_file, dict_res)

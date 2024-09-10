@@ -38,7 +38,7 @@ if ! grep -q "def $TARGET_FUNC" $TARGET_FILE; then
 fi
 
 # Check if the import statement already exists
-if grep -q "from dev.py.report.compute_fps import compute_fps" $TARGET_FILE; then
+if grep -q "from dev.report.compute_fps import compute_fps" $TARGET_FILE; then
     echo "Error: Import statement already exists in process_ops_logs.py."
     return 0
 fi
@@ -51,7 +51,7 @@ fi
 
 # Append lines to the $TARGET_FUNC function
 line_number=519     # hard-coded line number
-new_content="    from dev.py.report.compute_fps import compute_fps\n    compute_fps(allOpsCSVPath, outFolder)"
+new_content="    from dev.report.compute_fps import compute_fps\n    compute_fps(allOpsCSVPath, outFolder)"
 
 awk -v n=$line_number -v content="$new_content" 'NR==n {print; print content} NR!=n' "$TT_METAL_HOME/tt_metal/tools/profiler/process_ops_logs.py" > tmp_file && mv tmp_file "$TT_METAL_HOME/tt_metal/tools/profiler/process_ops_logs.py"
 

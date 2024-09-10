@@ -5,8 +5,8 @@ import numpy as np
 import traceback
 from datetime import datetime
 from loguru import logger
-from dev.py import *
-from dev.py.common import *
+from dev import *
+from dev.common import *
 
 # Device core count
 DEVICE_CORE_COUNT_MAP = {"grayskull": 108, "wormhole_b0": 64}

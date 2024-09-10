@@ -9,7 +9,7 @@ from models.utility_functions import (
     is_wormhole_b0,
     pad_and_fold_conv_activation_for_unity_stride,
 )
-from typing import List
+from typing import Lista
 
 hardcoded_matmul_config_linear = {
     1: ttnn.MatmulMultiCoreReuseMultiCast1DProgramConfig(

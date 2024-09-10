@@ -1,18 +1,19 @@
-from pathlib import Path 
-from dev.py.common import *
+from pathlib import Path
+from dev.common import *
 from tt_metal.tools.profiler.common import *
 from loguru import logger
-import argparse 
+import argparse
+
 
 def print_tracy_profile_log(output_result):
-    output_path = Path(TT_METAL_HOME / output_result )
+    output_path = Path(TT_METAL_HOME / output_result)
     if not output_path.exists():
         logger.error(f"Tracy profile log file not found: {output_path}")
         return
 
     tracy_profile_log_content = output_path.read_text(encoding="utf-8")
     tracy_profile_log_content = tracy_profile_log_content.replace("\n", "\n\n")
-    
+
     logger.info(f"Tracy profile log content: {tracy_profile_log_content}")
 
 

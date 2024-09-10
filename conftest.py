@@ -102,6 +102,10 @@ def device(request, device_params):
 
     num_devices = ttl.device.GetNumPCIeDevices()
 
+    logger.info(f"device_id = {device_id}")
+    logger.info(f"type(device_id) = {type(device_id)}")
+    logger.info(f"device_params = {device_params}")
+
     assert device_id < num_devices, "CreateDevice not supported for non-mmio device"
     device = ttl.device.CreateDevice(device_id=device_id, **device_params)
     ttl.device.SetDefaultDevice(device)

@@ -132,7 +132,8 @@ def preprocess_return_value(return_value):
     elif return_value is None:
         pass
     else:
-        raise ValueError(f"Unexpected type {type(return_value)}")
+        # raise ValueError(f"Unexpected type {type(return_value)}")
+        logger.warning(f"Unexpected type {type(return_value)}")
     return output_tensors
 
 
@@ -167,7 +168,7 @@ def trace_ttnn_operation(pretty_operation_name, operation):
         node_name = f"{pretty_operation_name}_{ttnn.torch_tracer.get_unique_id()}"
 
         operation_return_type = operation(*function_args, **function_kwargs)
-
+        logger.debug(f"Operation {pretty_operation_name} returned {operation_return_type}")
         output_tensors = preprocess_return_value(operation_return_type)
 
         GRAPH_STACK.pop()

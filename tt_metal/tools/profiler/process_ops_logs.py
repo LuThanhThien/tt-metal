@@ -518,7 +518,8 @@ def generate_reports(ops, deviceOps, signposts, outputFolder, date, nameAppend):
             for field, fieldData in rowDict.items():
                 rowDict[field] = str(fieldData).replace(",", ";")
             writer.writerow(rowDict)
-    from dev.py.report.compute_fps import compute_fps
+    from dev.report.compute_fps import compute_fps
+
     compute_fps(allOpsCSVPath, outFolder)
     logger.info(f"OPs csv generated at: {allOpsCSVPath}")
 

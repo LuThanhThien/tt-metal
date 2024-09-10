@@ -4,7 +4,7 @@
 
 import torch
 import torchvision
-from loguru import logger
+
 import ttnn
 from ttnn.model_preprocessing import (
     fold_batch_norm2d_into_conv2d,
@@ -23,8 +23,6 @@ def custom_preprocessor(
 ):
     parameters = {}
     if isinstance(model, torchvision.models.resnet.Bottleneck):
-        logger.info("Preprocessing the first conv layer of the Bottleneck model")
-        print(f"model.conv1 before preprocessing params: {model.conv1}")
         conv1_weight, conv1_bias = fold_batch_norm2d_into_conv2d(model.conv1, model.bn1)
         conv2_weight, conv2_bias = fold_batch_norm2d_into_conv2d(model.conv2, model.bn2)
         conv3_weight, conv3_bias = fold_batch_norm2d_into_conv2d(model.conv3, model.bn3)
@@ -37,7 +35,6 @@ def custom_preprocessor(
         parameters["conv1"]["bias"] = ttnn.from_torch(torch.reshape(conv1_bias, (1, 1, 1, -1)), mesh_mapper=mesh_mapper)
         parameters["conv2"]["bias"] = ttnn.from_torch(torch.reshape(conv2_bias, (1, 1, 1, -1)), mesh_mapper=mesh_mapper)
         parameters["conv3"]["bias"] = ttnn.from_torch(torch.reshape(conv3_bias, (1, 1, 1, -1)), mesh_mapper=mesh_mapper)
-        print(f"parameters.conv1 after preprocessing params: {parameters['conv1']}")
         if model.downsample is not None:
             downsample_weight, downsample_bias = fold_batch_norm2d_into_conv2d(model.downsample[0], model.downsample[1])
             parameters["downsample"] = {}
@@ -46,8 +43,6 @@ def custom_preprocessor(
                 torch.reshape(downsample_bias, (1, 1, 1, -1)), mesh_mapper=mesh_mapper
             )
     elif isinstance(model, torchvision.models.resnet.ResNet):
-        logger.info("Preprocessing the first conv layer of the ResNet model")
-        print(f"model.conv1 before preprocessing params: {model.conv1}")
         conv1_weight, conv1_bias = fold_batch_norm2d_into_conv2d(model.conv1, model.bn1)
         conv1_weight = pad_and_fold_conv_filters_for_unity_stride(conv1_weight, 2, 2)
         parameters["conv1"] = {}
@@ -64,7 +59,6 @@ def custom_preprocessor(
                 convert_to_ttnn=convert_to_ttnn,
                 ttnn_module_args=ttnn_module_args,
             )
-        print(f"parameters.conv1 after preprocessing params: {parameters['conv1']}")
     return parameters
 
 

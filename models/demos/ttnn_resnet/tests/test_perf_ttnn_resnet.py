@@ -2,6 +2,8 @@
 
 # SPDX-License-Identifier: Apache-2.0
 
+from typing import Literal
+from PIL.Image import Image
 import torch
 from loguru import logger
 import torchvision
@@ -9,9 +11,11 @@ from transformers import AutoImageProcessor
 import pytest
 import ttnn
 import tt_lib
+import ttnn.graph
 from ttnn.model_preprocessing import (
     preprocess_model_parameters,
 )
+import ttnn.tracer
 
 from models.utility_functions import (
     profiler,
@@ -28,6 +32,7 @@ from models.demos.ttnn_resnet.tests.test_ttnn_resnet50_performant import (
 from models.demos.ttnn_resnet.tests.ttnn_resnet_test_infra import load_resnet50_model
 from models.demos.ttnn_resnet.tt.custom_preprocessing import create_custom_mesh_preprocessor
 from models.demos.ttnn_resnet.tt.ttnn_functional_resnet50_new_conv_api import resnet50
+from models.utility_functions import tt2torch_tensor
 
 try:
     from tracy import signpost
@@ -82,6 +87,8 @@ def run_model(device, tt_inputs, tt_resnet50, num_warmup_iterations, num_measure
     if use_signpost:
         signpost(header="stop")
     ttnn.dump_device_profiler(device)
+
+    return None
 
 
 def run_2cq_model(device, tt_inputs, tt_resnet50, num_warmup_iterations, num_measurement_iterations):
@@ -144,6 +151,8 @@ def run_2cq_model(device, tt_inputs, tt_resnet50, num_warmup_iterations, num_mea
         signpost(header="stop")
     ttnn.dump_device_profiler(device)
 
+    return None
+
 
 def run_trace_model(device, tt_inputs, tt_resnet50, num_warmup_iterations, num_measurement_iterations):
     ops_parallel_config = {}
@@ -193,11 +202,14 @@ def run_trace_model(device, tt_inputs, tt_resnet50, num_warmup_iterations, num_m
         signpost(header="stop")
     ttnn.dump_device_profiler(device)
 
+    return tt_output_res
+
 
 def run_trace_2cq_model(device, tt_inputs, tt_resnet50, num_warmup_iterations, num_measurement_iterations):
     ops_parallel_config = {}
     tt_inputs_host, sharded_mem_config_DRAM, input_mem_config = setup_dram_sharded_input(device, tt_inputs, tt_resnet50)
     tt_image_res = tt_inputs_host.to(device, sharded_mem_config_DRAM)
+    print("tt_image_res.shape: ", tt_image_res.shape)
 
     op_event = ttnn.create_event()
     write_event = ttnn.create_event()
@@ -210,6 +222,7 @@ def run_trace_2cq_model(device, tt_inputs, tt_resnet50, num_warmup_iterations, n
     ttnn.record_event(device, 1, write_event)
     ttnn.wait_for_event(device, 0, write_event)
     reshard_out = ttnn.to_memory_config(tt_image_res, input_mem_config)
+    print("reshard_out.shape: ", reshard_out.shape)
     ttnn.record_event(device, 0, op_event)
     _ = ttnn.from_device(tt_resnet50(reshard_out, device, ops_parallel_config), blocking=True)
     profiler.end("compile")
@@ -275,6 +288,7 @@ def run_trace_2cq_model(device, tt_inputs, tt_resnet50, num_warmup_iterations, n
     if use_signpost:
         signpost(header="stop")
     ttnn.dump_device_profiler(device)
+    return tt_output_res
 
 
 def run_perf_resnet(
@@ -295,11 +309,25 @@ def run_perf_resnet(
     cpu_key = f"ref_key_batchsize{batch_size}"
     model_name = "microsoft/resnet-50"
 
+    from torchvision import transforms
+    from PIL import Image
+
+    new_input_size = (512, 512)
+
     image = hf_cat_image_sample_input
+
     image_processor = AutoImageProcessor.from_pretrained(model_name)
+    # preprocess = transforms.Compose([
+    #     transforms.Resize(new_input_size),  # Resize to new size
+    #     transforms.ToTensor(),
+    # ])
+
     inputs = image_processor(image, return_tensors="pt")
+    # inputs = preprocess(image)
 
     inputs = inputs["pixel_values"].bfloat16()
+    # inputs = inputs.unsqueeze(0).bfloat16()  # Assuming a batch size of 1
+
     comments = f"{list(inputs.shape)[-2]}x{list(inputs.shape)[-1]}_batchsize{batch_size}"
 
     inputs1 = inputs
@@ -312,6 +340,10 @@ def run_perf_resnet(
     parameters = preprocess_model_parameters(
         initialize_model=lambda: torch_resnet50, custom_preprocessor=create_custom_mesh_preprocessor(None), device=None
     )
+    print("parameters: ", parameters)
+    print("parameters.keys(): ", parameters.keys())
+    print("type(parameters): ", type(parameters))
+
     torch_resnet50.to(torch.bfloat16)
 
     tt_resnet50 = resnet50(
@@ -329,20 +361,51 @@ def run_perf_resnet(
 
     with torch.no_grad():
         profiler.start(cpu_key)
+        print("torch inputs.shape: ", inputs.shape)
         logits = torch_resnet50(inputs)
+        print("logits.shape: ", logits.shape)
         profiler.end(cpu_key)
 
         tt_inputs = tt_resnet50.preprocessing(inputs)
+        print("tt_inputs.shape after preprocessing: ", tt_inputs.shape)
+
+        tt_output_as_torch = None
         if "resnet50_trace_2cqs" in model_version:
-            run_trace_2cq_model(device, tt_inputs, tt_resnet50, num_warmup_iterations, num_measurement_iterations)
+            tt_output_as_torch = run_trace_2cq_model(
+                device, tt_inputs, tt_resnet50, num_warmup_iterations, num_measurement_iterations
+            )
         elif "resnet50_2cqs" in model_version:
-            run_2cq_model(device, tt_inputs, tt_resnet50, num_warmup_iterations, num_measurement_iterations)
+            tt_output_as_torch = run_2cq_model(
+                device, tt_inputs, tt_resnet50, num_warmup_iterations, num_measurement_iterations
+            )
         elif "resnet50_trace" in model_version:
-            run_trace_model(device, tt_inputs, tt_resnet50, num_warmup_iterations, num_measurement_iterations)
+            tt_output_as_torch = run_trace_model(
+                device, tt_inputs, tt_resnet50, num_warmup_iterations, num_measurement_iterations
+            )
         elif "resnet50" in model_version:
-            run_model(device, tt_inputs, tt_resnet50, num_warmup_iterations, num_measurement_iterations)
+            tt_output_as_torch = run_model(
+                device, tt_inputs, tt_resnet50, num_warmup_iterations, num_measurement_iterations
+            )
         else:
             assert False, f"Model version to run {model_version} not found"
+
+        # if tt_output_as_torch is None:
+        #     logger.warning("tt_output_as_torch is None, re-running the model")
+        #     tt_output_as_torch = tt_resnet50(tt_inputs)
+        #     ttnn.synchronize_device(device)
+        #     ttnn.dump_device_profiler(device)
+
+        # logger.info(f"tt_output_as_torch.shape: {tt_output_as_torch.shape}")
+        # tt_output_as_torch = tt2torch_tensor(tt_output_as_torch)
+        # tt_output_as_torch = tt_output_as_torch.reshape(logits.shape)
+        # try:
+        #     logger.info(f"Visualizing the graph for {model_version}")
+        #     logger.info(f"tt_output_as_torch.shape: {tt_output_as_torch.shape}")
+        #     ttnn.graph.visualize(tt_output_as_torch, file_name="resnet50_trace_2cqs.svg")
+        # except Exception as e:
+        #     import traceback
+        #     logger.error(f"Error in visualizing the graph: {e}")
+        #     logger.error("Stack Trace: \n" + traceback.format_exc())
 
     first_iter_time = profiler.get(f"compile") + profiler.get(f"cache")
 
@@ -376,10 +439,10 @@ def run_perf_resnet(
 def test_perf_bare_metal(
     device,
     use_program_cache,
-    batch_size,
-    expected_inference_time,
-    expected_compile_time,
-    hf_cat_image_sample_input,
+    batch_size: Literal[16],
+    expected_inference_time: float,
+    expected_compile_time: Literal[25],
+    hf_cat_image_sample_input: Image,
     model_location_generator,
 ):
     run_perf_resnet(
@@ -407,11 +470,11 @@ def test_perf_bare_metal(
 def test_perf_trace_bare_metal(
     device,
     use_program_cache,
-    batch_size,
-    expected_inference_time,
-    expected_compile_time,
-    hf_cat_image_sample_input,
-    enable_async_mode,
+    batch_size: Literal[16],
+    expected_inference_time: float,
+    expected_compile_time: Literal[25],
+    hf_cat_image_sample_input: Image,
+    enable_async_mode: bool,
     model_location_generator,
 ):
     mode = "async" if enable_async_mode else "sync"
@@ -436,10 +499,10 @@ def test_perf_trace_bare_metal(
 def test_perf_2cqs_bare_metal(
     device,
     use_program_cache,
-    batch_size,
-    expected_inference_time,
-    expected_compile_time,
-    hf_cat_image_sample_input,
+    batch_size: Literal[16],
+    expected_inference_time: float,
+    expected_compile_time: Literal[25],
+    hf_cat_image_sample_input: Image,
     model_location_generator,
 ):
     run_perf_resnet(
@@ -465,10 +528,10 @@ def test_perf_2cqs_bare_metal(
 def test_perf_trace_2cqs_bare_metal(
     device,
     use_program_cache,
-    batch_size,
-    expected_inference_time,
-    expected_compile_time,
-    hf_cat_image_sample_input,
+    batch_size: Literal[16],
+    expected_inference_time: float,
+    expected_compile_time: Literal[25],
+    hf_cat_image_sample_input: Image,
     model_location_generator,
 ):
     run_perf_resnet(

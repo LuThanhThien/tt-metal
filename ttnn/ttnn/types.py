@@ -4,7 +4,7 @@
 
 import dataclasses
 from enum import Enum
-
+from typing import Union
 import ttnn
 
 DataType = ttnn._ttnn.deprecated.tensor.DataType
@@ -85,7 +85,9 @@ CoreCoord = ttnn._ttnn.deprecated.tensor.CoreCoord
 UnaryWithParam = ttnn._ttnn.activation.UnaryWithParam
 UnaryOpType = ttnn._ttnn.activation.UnaryOpType
 
+
 # Lu Thien 2024.08.21 TensorPrintProfile
-FULL = "Full"
-EMPTY = "Empty"
-SHORT = "Short"
+class PrintOptions:
+    FULL = "Full"
+    EMPTY = "Empty"
+    SHORT = "Short"

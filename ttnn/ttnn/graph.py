@@ -8,7 +8,7 @@ from loguru import logger
 import pathlib
 import graphviz
 
-from ttnn._ttnn.graph import RunMode, begin_graph_capture, end_graph_capture
+# from ttnn._ttnn.graph import RunMode, begin_graph_capture, end_graph_capture
 
 
 class ExitStackWithPop(contextlib.ExitStack):
@@ -157,7 +157,6 @@ def _visualize(
 
 
 def visualize(
-    captured_graph,
     *,
     file_name: Union[pathlib.Path, str] = None,
     visualize_node: Callable = visualize_node,

@@ -1,4 +1,3 @@
-
 from loguru import logger
 import json
 from pathlib import Path
@@ -6,6 +5,7 @@ from typing import Union
 
 
 INDENT_NUMBER = 4
+
 
 def safe_save(file_path, content):
     try:
@@ -36,7 +36,7 @@ def safe_append(file_path, content):
         return False
 
 
-def safe_touch(file_path : Union[str, Path], write_if_empty=True, write_content="[]", exist_ok=True):
+def safe_touch(file_path: Union[str, Path], write_if_empty=True, write_content="[]", exist_ok=True):
     try:
         file_path = Path(file_path)
         file_path.touch(exist_ok=exist_ok)

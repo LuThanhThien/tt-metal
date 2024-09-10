@@ -1079,8 +1079,10 @@ def ttl_complex_2_torch_complex(tt_tensor):
 
 
 def pad_and_fold_conv_activation_for_unity_stride(activation_pyt_nchw_tensor, pad_h, pad_w, stride_h, stride_w):
-    assert stride_h == stride_w
-    assert activation_pyt_nchw_tensor.shape[2] == activation_pyt_nchw_tensor.shape[3]
+    assert stride_h == stride_w, f"stride_h = {stride_h} and stride_w = {stride_w} are not equal"
+    assert (
+        activation_pyt_nchw_tensor.shape[2] == activation_pyt_nchw_tensor.shape[3]
+    ), f"Height = {activation_pyt_nchw_tensor.shape[2]} and width = {activation_pyt_nchw_tensor.shape[3]} of activation tensor are not equal"
     # Fold activation for unity stride
     # Pad channel size to 4. This is to make sure L1 read addresses are 16 bit aligned
     C = _nearest_y(activation_pyt_nchw_tensor.shape[1], 4)
@@ -1088,9 +1090,14 @@ def pad_and_fold_conv_activation_for_unity_stride(activation_pyt_nchw_tensor, pa
     activation_pyt_padded = torch.nn.functional.pad(
         activation_pyt_nchw_tensor, (pad_w, pad_w, pad_h, pad_h, 0, C - activation_pyt_nchw_tensor.shape[1])
     )
+    from dev.common import logger
+
     print("activation_pyt_padded.shape", activation_pyt_padded.shape)
+    # logger.debug(f"activation_pyt_padded: \n{activation_pyt_padded}")
     # Fold the activation face by stride depth wise i.e. C,H,W -> C*stride_h*stride_w, H/stride_h, W/stride_w
-    assert activation_pyt_padded.shape[2] % stride_h == 0
+    assert (
+        activation_pyt_padded.shape[2] % stride_h == 0
+    ), f"Height of activation tensor = {activation_pyt_padded.shape[2]} is not divisible by stride_h = {stride_h}"
     activation_pyt_padded_folded = torch.zeros(
         [
             activation_pyt_padded.shape[0],
@@ -1173,3 +1180,19 @@ def get_debug_tensor(num_pages_width, num_pages_height, dtype, page_width=32, pa
 
     return torch_tensor
 
+
+def print_dict_summary(name: str = None, attributes_dict={}):
+    print("############ Operation Attribute Summary ############")
+    print(f"Operation: {name}")
+
+    for key, value in attributes_dict.items():
+        if isinstance(value, dict):
+            print(f"\t{key}:")
+            for sub_key, sub_value in value.items():
+                print(f"\t{sub_key}:\t\t{sub_value}")
+        elif hasattr(value, "shape"):
+            print(f"\t{key}:\tTensor of shape {value.shape}")
+        else:
+            print(f"\t{key}:\t\t{value}")
+
+    print("################## End of Summary ##################")
